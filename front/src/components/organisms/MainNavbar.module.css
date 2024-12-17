@@ -1,0 +1,26 @@
+.mainNavbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.linkWrapper {
+  display: flex;
+  justify-content: flex-end;
+  max-width: min(130rem, 100% - 1.2rem);
+  list-style: none;
+  gap: 3.2rem;
+  padding: 0.6rem 1.2rem;
+  margin-inline: auto;
+}
+
+.linkWrapper a:first-child {
+  margin-right: auto;
+}
+
+
+.linkWrapper a {
+  color: #c3bcc2;
+  font-size: 2.4rem;
+}

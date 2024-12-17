@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    {"path": "./tsconfig.app.json"},
+    {"path": "./tsconfig.node.json"}
+  ],
+  "baseURL": "src",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@assets": ["./assets"],
+    }
+  }
+}
