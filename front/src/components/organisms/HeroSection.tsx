@@ -8,6 +8,8 @@ import myPhoto from "../../assets/myPhotoB&W.png"
 export default function HeroSection(): ReactElement {
   return (
     <section className={styles.heroSection}>
+      <div className={styles.aestheticA}/>
+      <div className={styles.aestheticB}/>
       <div className={styles.contentWrapper}>
         <div className={styles.personalInfoWrapper}>
           <p>Python Developer</p>

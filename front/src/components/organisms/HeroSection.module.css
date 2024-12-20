@@ -1,8 +1,33 @@
 .heroSection {
   height: 100vh;
   width: 100vw;
-  background-color: #242424;
+  background-image: radial-gradient(
+    ellipse at bottom right,
+    #353a3a,
+    rgba(0, 0, 0, 0.1) 30%
+  );
   color: #c3bcc2;
+  z-index: -1;
+}
+
+.aestheticA {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #242424;
+  z-index: -1;
+}
+
+.aestheticB {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  /*background-image:;*/
+  z-index: -1;
 }
 
 .contentWrapper {
@@ -15,7 +40,7 @@
 .personalInfoWrapper {
   display: flex;
   flex: 1;
-  background-color: #242424;
+  background-color: #353a3a;
   flex-direction: column;
   justify-content: center;
   padding-inline: 2.4rem;
@@ -31,7 +56,7 @@
 
 .photoWrapper {
   display: flex;
-  background-color: #353a3a;
+  /*background-color: #353a3a;*/
   height: max(72rem, 100vh);
   padding-inline: 2.4rem;
 }
