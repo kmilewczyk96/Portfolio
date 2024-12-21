@@ -8,7 +8,7 @@
 .linkWrapper {
   display: flex;
   justify-content: flex-end;
-  max-width: min(130rem, 100% - 1.2rem);
+  max-width: min(192rem, 100% - 1.2rem);
   list-style: none;
   gap: 3.2rem;
   padding: 0.6rem 1.2rem;
@@ -21,6 +21,18 @@
 
 
 .linkWrapper a {
-  color: #c3bcc2;
+  color: #aba4aa;
   font-size: 2.4rem;
+  font-weight: 400;
+  transition: color 0.5s, border 0.5s, text-shadow 0.5s;
+  border: 1px solid transparent;
+}
+
+@media (hover: hover) {
+  .linkWrapper a:hover,
+  .linkWrapper a:active {
+    color: #c3bcc2;
+    border-bottom-color: #c3bcc2;
+    text-shadow: 0 0 2px #c3bcc2;
+  }
 }

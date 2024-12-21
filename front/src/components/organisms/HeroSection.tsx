@@ -12,7 +12,7 @@ export default function HeroSection(): ReactElement {
       <div className={styles.aestheticB}/>
       <div className={styles.contentWrapper}>
         <div className={styles.personalInfoWrapper}>
-          <p>Python Developer</p>
+          <p className={styles.title}>Python Developer</p>
           <h2>Karol Milewczyk</h2>
         </div>
         <div className={styles.photoWrapper}>
