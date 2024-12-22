@@ -2,12 +2,12 @@ import styles from "./HeroSection.module.css";
 
 import {ReactElement} from "react";
 
-import myPhoto from "../../assets/myPhotoB&W.png"
+import myPhoto from "../../assets/myPhotoB&W.png";
 
 
 export default function HeroSection(): ReactElement {
   return (
-    <section className={styles.heroSection}>
+    <section id={"heroSection"} className={styles.heroSection}>
       <div className={styles.aestheticA}/>
       <div className={styles.aestheticB}/>
       <div className={styles.contentWrapper}>
