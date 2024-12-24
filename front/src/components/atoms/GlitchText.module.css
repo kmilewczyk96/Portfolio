@@ -5,49 +5,154 @@
 .wrapper > span:not(.nonAbsolute) {
   position: absolute;
   top: 0;
-  left: 0;
 }
 
 .wrapper > *:first-child {
-  text-shadow: 0.05em 0 rgba(230, 73, 128, 0.85),
-  -0.025em -0.05em 0 rgba(56, 217, 169, 0.85),
-  0.025em 0.05em 0 rgba(116, 192, 252, 0.85);
+  animation: glitch 5s infinite;
+  animation-delay: inherit;
+}
 
-  animation: glitch 2s infinite;
+.wrapper > *:nth-child(2) {
+  animation: glitchTop 5s infinite;
+  animation-delay: inherit
+}
+
+.wrapper > *:nth-child(3) {
+  animation: glitchBottom 5s infinite;
+  animation-delay: inherit
 }
 
 @keyframes glitch {
   0% {
-    text-shadow: 0.05em 0 rgba(230, 73, 128, 0.85),
-    -0.025em -0.05em 0 rgba(56, 217, 169, 0.85),
-    0.025em 0.05em 0 rgba(116, 192, 252, 0.85);
+    text-shadow: 0.05em 0 var(--fxRed),
+    -0.025em -0.025em 0 var(--fxGreen),
+    0.025em 0.025em 0 var(--fxBlue);
   }
-  9% {
-    text-shadow: -0.025em 0 rgba(230, 73, 128, 0.85),
-    -0.025em -0.025em 0 rgba(56, 217, 169, 0.5),
-    0.025em 0.05em 0 rgba(116, 192, 252, 0.85);
+  2% {
+    text-shadow: 0.05em 0 var(--fxRed),
+    -0.025em -0.025em 0 var(--fxGreen),
+    0.025em 0.025em 0 var(--fxBlue);
   }
-  10% {
-    text-shadow: -0.025em 0 rgba(230, 73, 128, 0.85),
-    -0.05em 0.025em 0 rgba(56, 217, 169, 0.85),
-    -0.025em -0.05em 0 rgba(116, 192, 252, 0.85);
+  2.1% {
+    text-shadow: -0.15em 0 var(--fxRed),
+    -0.25em 0.025em 0 var(--fxGreen),
+    -0.025em -0.025em 0 var(--fxBlue);
   }
-  27% {
-    text-shadow: -0.05em 0 rgba(230, 73, 128, 0.85),
-    -0.025em -0.05em 0 rgba(56, 217, 169, 0.85),
-    0.025em 0.05em 0 rgba(116, 192, 252, 0.85);
+  5% {
+    text-shadow: -0.15em 0 var(--fxRed),
+    -0.25em 0.025em 0 var(--fxGreen),
+    -0.025em -0.025em 0 var(--fxBlue);
   }
-  77% {
-    text-shadow: 0.05em 0 rgba(230, 73, 128, 0.85),
-    -0.025em -0.05em 0 rgba(56, 217, 169, 0.85),
-    -0.025em -0.05em 0 rgba(116, 192, 252, 0.85);
+  5.1% {
+    text-shadow: 0.05em 0 var(--fxRed),
+    -0.025em -0.025em 0 var(--fxGreen),
+    -0.025em -0.025em 0 var(--fxBlue);
   }
-  80% {
-    text-shadow: -0.025em 0 rgba(230, 73, 128, 0.85),
-    -0.025em 0.05em 0 rgba(56, 217, 169, 0.85),
-    -0.025em -0.05em 0 rgba(116, 192, 252, 0.85);
+  20% {
+    text-shadow: 0.05em 0 var(--fxRed),
+    -0.025em -0.05em 0 var(--fxGreen),
+    -0.025em -0.025em 0 var(--fxBlue);
+  }
+  20.1% {
+    text-shadow: none;
+  }
+  25% {
+    text-shadow: none;
+  }
+  25.1% {
+    text-shadow: 0.05em 0 var(--fxRed),
+    -0.025em -0.05em 0 var(--fxGreen),
+    -0.025em -0.025em 0 var(--fxBlue);
+  }
+  26% {
+    text-shadow: 0.05em 0 var(--fxRed),
+    -0.025em -0.05em 0 var(--fxGreen),
+    -0.025em -0.025em 0 var(--fxBlue);
+  }
+  26.1% {
+    text-shadow: none;
+  }
+  30% {
+    text-shadow: none
+  }
+  30.1% {
+    text-shadow: 0.05em 0 var(--fxRed),
+    0.025em -0.05em 0 var(--fxGreen),
+    0.025em -0.025em 0 var(--fxBlue);
+  }
+  32% {
+    text-shadow: 0.05em 0 var(--fxRed),
+    0.025em -0.05em 0 var(--fxGreen),
+    0.025em -0.025em 0 var(--fxBlue);
+  }
+  32.1% {
+    text-shadow: none;
   }
   100% {
     text-shadow: none
   }
+}
+
+@keyframes glitchTop {
+  0% {
+    left: -0.05em;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  }
+  2% {
+    left: -0.05em;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  }
+  2.1% {
+    left: 0;
+  }
+  12% {
+    left: 0;
+  }
+  12.1% {
+    left: -0.05em;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  }
+  13% {
+    left: -0.05em;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  }
+  13.1% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+  }
+
+}
+
+@keyframes glitchBottom {
+  0% {
+    left: 0.05em;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+  2% {
+    left: 0.05em;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+  2.1% {
+    left: 0;
+  }
+  15% {
+    left: 0;
+  }
+  15.1% {
+    left: 0.05em;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+  16% {
+    left: 0.05em;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+  16.1% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+  }
+
 }

@@ -23,6 +23,10 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --fxRed: rgba(230, 73, 128, 0.6);
+  --fxGreen: rgba(56, 217, 169, 0.6);
+  --fxBlue: rgba(116, 192, 252, 0.6);
 }
 
 body {

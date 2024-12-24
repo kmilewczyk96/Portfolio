@@ -19,6 +19,7 @@ export default function HeroSection(): ReactElement {
             text={"Karol Milewczyk"}
             htmlTextTag={htmlTextTags.h2}
             className={styles.name}
+            animationDelaySeconds={3}
           />
         </div>
         <div className={styles.photoWrapper}>

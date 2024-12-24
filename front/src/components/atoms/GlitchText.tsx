@@ -8,9 +8,10 @@ type IProps = {
   text: string,
   className: string | undefined,
   htmlTextTag: htmlTextTags,
+  animationDelaySeconds?: number
 };
 
-export default function GlitchText({text, className, htmlTextTag}: IProps) {
+export default function GlitchText({text, className, htmlTextTag, animationDelaySeconds=0}: IProps) {
   let content: ReactElement;
   switch (htmlTextTag) {
     case htmlTextTags.h1:
@@ -40,7 +41,10 @@ export default function GlitchText({text, className, htmlTextTag}: IProps) {
   }
 
   return (
-    <div className={[styles.wrapper, className].join(" ")}>
+    <div
+      style={{animationDelay: `${animationDelaySeconds}s`}}
+      className={[styles.wrapper, className].join(" ")}
+    >
       {content}
       <span aria-hidden={true}>{text}</span>
       <span aria-hidden={true}>{text}</span>
