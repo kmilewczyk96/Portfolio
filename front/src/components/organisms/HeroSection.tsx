@@ -22,6 +22,12 @@ export default function HeroSection(): ReactElement {
             className={styles.name}
             animationDelaySeconds={3}
           />
+          <p className={styles.description}>
+            Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
+            Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
+            Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
+            Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
+          </p>
         </div>
         <div className={styles.photoWrapper}>
           <GlitchImage

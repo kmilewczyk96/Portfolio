@@ -1,8 +1,11 @@
 .mainNavbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 99;
+  background-color: rgba(26, 26, 26, 0.90);
+  padding-block: 0.4rem;
 }
 
 .linkWrapper {
@@ -11,7 +14,7 @@
   max-width: min(192rem, 100% - 1.2rem);
   list-style: none;
   gap: 3.2rem;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem var(--contentPadding);
   margin-inline: auto;
 }
 
@@ -26,6 +29,7 @@
   font-weight: 400;
   transition: color 0.5s, border 0.5s, text-shadow 0.5s;
   border: 1px solid transparent;
+  padding-block: 0.2rem;
 }
 
 @media (hover: hover) {
