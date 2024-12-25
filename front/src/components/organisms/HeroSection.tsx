@@ -2,6 +2,7 @@ import styles from "./HeroSection.module.css";
 
 import {ReactElement} from "react";
 
+import GlitchImage from "../atoms/GlitchImage.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import myPhoto from "../../assets/myPhotoB&W.png";
 import {htmlTextTags} from "../../utils/enums.ts";
@@ -23,7 +24,12 @@ export default function HeroSection(): ReactElement {
           />
         </div>
         <div className={styles.photoWrapper}>
-          <img className={styles.photo} src={myPhoto} alt={"Photo of myself."}/>
+          <GlitchImage
+            imageSource={myPhoto}
+            imageAltText={"My photo."}
+            className={styles.photo}
+            animationDelaySeconds={3}
+          />
         </div>
       </div>
     </section>

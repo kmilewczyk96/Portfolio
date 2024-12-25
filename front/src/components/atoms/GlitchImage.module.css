@@ -1,0 +1,145 @@
+.wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+}
+
+.wrapper > *:not(.wrapper > *:first-child) {
+  position: absolute;
+  top: 0;
+}
+
+.wrapper > * {
+  height: 100%;
+}
+
+.wrapper > img:first-child {
+  z-index: 0;
+  animation: glitch 5s infinite;
+  animation-delay: inherit;
+}
+
+.wrapper > img:nth-child(2) {
+  left: -1.5em;
+  opacity: 0;
+  filter: drop-shadow(-0.5em 0 0 var(--fxRed));
+  animation: glitch2 5s infinite;
+  animation-delay: inherit;
+}
+
+.wrapper > img:nth-child(3) {
+  left: 1.5em;
+  opacity: 0;
+  filter: drop-shadow(0.5em 0 0 var(--fxGreen));
+  animation: glitch3 5s infinite;
+  animation-delay: inherit;
+}
+
+@keyframes glitch {
+  0% {
+    z-index: 0;
+  }
+  1% {
+    z-index: 0;
+  }
+  1.1% {
+    z-index: 1;
+  }
+  12% {
+    z-index: 1;
+  }
+  12.1% {
+    z-index: 0;
+  }
+  14% {
+    z-index: 0;
+  }
+  14.1% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 1;
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    opacity: 25%;
+  }
+  1% {
+    opacity: 25%;
+  }
+  1.1% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0;
+  }
+  12.1% {
+    opacity: 25%;
+    left: -5em;
+  }
+  14% {
+    opacity: 25%;
+    left: -5em;
+  }
+  14.1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glitch3 {
+  0% {
+    opacity: 25%;
+  }
+  1% {
+    opacity: 25%;
+  }
+  1.1% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0;
+  }
+  12.1% {
+    opacity: 25%;
+    left: 3em;
+  }
+  14% {
+    opacity: 25%;
+    left: 3em;
+  }
+  14.1% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 0;
+  }
+  16.1% {
+    opacity: 25%;
+  }
+  18% {
+    opacity: 25%;
+  }
+  18.1% {
+    opacity: 0;
+  }
+  19% {
+    opacity: 0;
+  }
+  19.1% {
+    opacity: 25%;
+  }
+  20% {
+    opacity: 25%;
+  }
+  20.1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

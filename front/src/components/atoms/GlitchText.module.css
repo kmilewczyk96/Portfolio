@@ -35,12 +35,12 @@
   }
   2.1% {
     text-shadow: -0.15em 0 var(--fxRed),
-    -0.25em 0.025em 0 var(--fxGreen),
+    0.15em 0.025em 0 var(--fxGreen),
     -0.025em -0.025em 0 var(--fxBlue);
   }
   5% {
     text-shadow: -0.15em 0 var(--fxRed),
-    -0.25em 0.025em 0 var(--fxGreen),
+    0.15em 0.025em 0 var(--fxGreen),
     -0.025em -0.025em 0 var(--fxBlue);
   }
   5.1% {
