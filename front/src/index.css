@@ -76,3 +76,11 @@ p,
 span {
   font: unset;
 }
+
+img {
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: middle;
+  max-width: 100%;
+}

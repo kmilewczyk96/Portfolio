@@ -1,0 +1,26 @@
+.wrapper {
+  font-size: 1.8rem;
+  border-radius: 5px;
+  color: #eee;
+  text-shadow: 0 0 8px #fff;
+
+  padding: 0.2rem 0.6rem;
+}
+
+.backend {
+  background-color: rgba(230, 73, 128, 0.75);
+  border: 1px solid rgba(230, 73, 128, 0.5);
+  box-shadow: 0 0 5px rgba(230, 73, 128, 0.8);
+}
+
+.frontend {
+  background-color: rgba(56, 217, 169, 0.75);
+  border: 1px solid rgba(56, 217, 169, 0.5);
+  box-shadow: 0 0 5px rgba(56, 217, 169, 0.8);
+}
+
+.tool {
+  background-color: rgba(116, 192, 252, 0.75);
+  border: 1px solid rgba(116, 192, 252, 0.5);
+  box-shadow: 0 0 5px rgba(116, 192, 252, 0.8);
+}

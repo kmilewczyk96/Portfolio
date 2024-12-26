@@ -8,3 +8,9 @@ export enum htmlTextTags {
   p,
   span,
 }
+
+export enum projectTagTypes {
+  backend = "backend",
+  frontend = "frontend",
+  tool = "tool"
+}

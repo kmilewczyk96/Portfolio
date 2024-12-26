@@ -11,4 +11,15 @@
 
 .sectionName {
   font-size: 7.2rem;
+  margin-bottom: 9.6rem;
+}
+
+.projectsShowcase {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 9.6rem;
+  padding-inline: var(--contentPadding);
 }
