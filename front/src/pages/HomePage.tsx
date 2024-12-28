@@ -16,9 +16,13 @@ const dummyProjects: IProject[] = [
     title: "Recipe App",
     tags: [
       {name: "Python", type: projectTagTypes.backend},
+      {name: "Django REST Framework", type: projectTagTypes.backend},
+      {name: "Django", type: projectTagTypes.backend},
       {name: "React", type: projectTagTypes.frontend},
       {name: "JavaScript", type: projectTagTypes.frontend},
-      {name: "Docker", type: projectTagTypes.tool}
+      {name: "Docker", type: projectTagTypes.tool},
+      {name: "AWS", type: projectTagTypes.tool},
+      {name: "GitHub Actions", type: projectTagTypes.tool},
     ],
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   },
