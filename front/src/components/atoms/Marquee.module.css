@@ -1,4 +1,13 @@
 .wrapper {
   width: fit-content;
+  animation: roll infinite linear;
 }
 
+@keyframes roll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
