@@ -2,6 +2,7 @@ import styles from "./ProjectCard.module.css";
 
 import {ReactElement} from "react";
 
+import Button from "../atoms/Button.tsx";
 import Marquee from "../atoms/Marquee.tsx";
 import TagPill from "../atoms/TagPill.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
@@ -29,6 +30,9 @@ export default function ProjectCard({project}: IProps): ReactElement {
           project.tags.map(tag => (<TagPill name={tag.name} type={tag.type}/>))
         }/>
         <p className={styles.projectDescription}>{project.description}</p>
+        <div className={styles.actions}>
+          <Button onClick={() => {}}>Details</Button>
+        </div>
       </div>
     </article>
   );
