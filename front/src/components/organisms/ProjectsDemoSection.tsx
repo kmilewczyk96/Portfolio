@@ -2,6 +2,8 @@ import styles from "./ProjectsDemoSection.module.css";
 
 import {ReactElement} from "react";
 
+import BaseWrapper from "../atoms/BaseWrapper.tsx";
+import Button from "../atoms/Button.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import ProjectCard from "../molecules/ProjectCard.tsx";
 import {htmlTextTags} from "../../utils/enums.ts";
@@ -26,6 +28,9 @@ export default function ProjectsDemoSection({projects}: IProps): ReactElement {
             <ProjectCard key={project.id} project={project}/>
           ))}
         </ul>
+        <BaseWrapper contentAlignment={"center"} className={styles.actions}>
+          <Button onClick={() => {}}>More</Button>
+        </BaseWrapper>
       </div>
     </section>
   );

@@ -22,4 +22,9 @@
   align-items: flex-start;
   gap: 9.6rem;
   padding-inline: var(--contentPadding);
+  margin-bottom: 4.8rem;
+}
+
+.actions {
+  margin-bottom: auto;
 }

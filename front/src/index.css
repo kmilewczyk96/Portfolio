@@ -33,8 +33,11 @@ html {
   --fxBlue: rgba(116, 192, 252, 0.5);
 }
 
+#root {
+  width: 100%;
+}
+
 body {
-  margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -61,8 +64,9 @@ a:visited {
 }
 
 section {
+  /* Code duplication because not all browsers support svh unit yet.*/
   height: max(72rem, 100vh);
-  width: 100vw;
+  height: max(72rem, 100svh);
   color: #c3bcc2;
 }
 

@@ -28,10 +28,10 @@ export default function Marquee({className, elementsToDisplay}: IProps): ReactEl
   useLayoutEffect(() => {
     console.log("triggered!")
     // @ts-ignore
-    const marqueeWidth: number = marqueeWrapper.current.offsetWidth;
+    const marqueeWidth: number = marqueeWrapper.current.clientWidth;
     // @ts-ignore
     if (marqueeWidth > marqueeWrapper.current.parentElement.offsetWidth) {
-      setAnimationSpeed(marqueeWidth / 250);
+      setAnimationSpeed(marqueeWidth / 150);
     }
   }, [])
 
