@@ -14,20 +14,42 @@ interface IProps {
 }
 
 export default function Marquee({className, elementsToDisplay}: IProps): ReactElement {
-  const marqueeWrapper = useRef(null);
+  const marqueeRef = useRef(null);
+  const [wrapperWidth, setWrapperWidth] = useState(0);
   const [animationSpeed, setAnimationSpeed] = useState(0);
 
   let wrapperClasses: string[] = [styles.wrapper, className];
   animationSpeed !== 0 && wrapperClasses.push(styles.wrapperAnimated);
 
   useLayoutEffect(() => {
-    // @ts-ignore
-    const marqueeWidth: number = marqueeWrapper?.current.offsetWidth;
-    // @ts-ignore
-    if (marqueeWidth > marqueeWrapper.current.parentElement.offsetWidth) {
-      setAnimationSpeed(marqueeWidth / 150);
+    function handleResize(): void {
+      if (typeof marqueeRef !== null) {
+        // @ts-ignore
+        setWrapperWidth(marqueeRef.current.parentElement.offsetWidth);
+      }
     }
-  }, [])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useLayoutEffect(() => {
+    const timer = setTimeout(() => {
+      if (typeof marqueeRef !== null) {
+        // @ts-ignore
+        const marqueeWidth: number = marqueeRef.current.offsetWidth;
+        // @ts-ignore
+        const wrapperWidth: number = marqueeRef.current.parentElement.offsetWidth;
+
+        if (marqueeWidth > wrapperWidth) {
+          setAnimationSpeed(marqueeWidth / 150);
+        } else {
+          setAnimationSpeed(0);
+        }
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [wrapperWidth])
 
   return (
     <div
@@ -35,7 +57,7 @@ export default function Marquee({className, elementsToDisplay}: IProps): ReactEl
       className={wrapperClasses.join(" ")}
     >
       <ul
-        ref={marqueeWrapper}
+        ref={marqueeRef}
         className={styles.marquee}
         style={{animationDuration: `${animationSpeed}s`}}
       >

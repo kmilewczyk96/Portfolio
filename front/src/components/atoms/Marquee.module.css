@@ -25,7 +25,6 @@
 
 .marquee {
   display: flex;
-  width: fit-content;
   animation: roll infinite linear;
 }
 

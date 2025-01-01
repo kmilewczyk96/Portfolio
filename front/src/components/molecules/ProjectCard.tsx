@@ -11,23 +11,22 @@ import {IProject} from "../../utils/interfaces.ts";
 
 
 interface IProps {
-  project: IProject
+  project: IProject,
+  titleAnimationDelay?: number
 }
 
-export default function ProjectCard({project}: IProps): ReactElement {
-
-
+export default function ProjectCard({project, titleAnimationDelay=0}: IProps): ReactElement {
   return (
     <article className={styles.wrapper}>
       <div className={styles.imageWrapper}>
         <img src={project.imgSource} alt={`${project.title} project screenshot.`} className={styles.projectImage}/>
       </div>
       <div className={styles.infoWrapper}>
-        <GlitchText text={project.title} className={styles.projectTitle} htmlTextTag={htmlTextTags.h4} animationDelaySeconds={2.5}/>
+        <GlitchText text={project.title} className={styles.projectTitle} htmlTextTag={htmlTextTags.h4} animationDelaySeconds={titleAnimationDelay}/>
         <Marquee
           className={styles.projectTags}
           elementsToDisplay={
-          project.tags.map(tag => (<TagPill name={tag.name} type={tag.type}/>))
+          project.tags.map(tag => <TagPill name={tag.name} type={tag.type}/>)
         }/>
         <p className={styles.projectDescription}>{project.description}</p>
         <div className={styles.actions}>

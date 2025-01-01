@@ -40,9 +40,6 @@
 }
 
 .projectTags {
-  display: flex;
-  flex-direction: row;
-  gap: 0.6rem;
   margin-bottom: 1.8rem;
 }
 

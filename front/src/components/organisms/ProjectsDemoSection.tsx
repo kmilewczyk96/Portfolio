@@ -24,8 +24,8 @@ export default function ProjectsDemoSection({projects}: IProps): ReactElement {
           htmlTextTag={htmlTextTags.h3}
         />
         <ul className={styles.projectsShowcase}>
-          {projects.map(project => (
-            <ProjectCard key={project.id} project={project}/>
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} titleAnimationDelay={index * 0.5 + 2}/>
           ))}
         </ul>
         <BaseWrapper contentAlignment={"center"} className={styles.actions}>
