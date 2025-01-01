@@ -88,3 +88,8 @@ img {
   vertical-align: middle;
   max-width: 100%;
 }
+
+li,
+ul {
+  list-style: none;
+}

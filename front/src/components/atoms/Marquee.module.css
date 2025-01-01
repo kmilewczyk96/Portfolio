@@ -1,6 +1,36 @@
 .wrapper {
+  --itemGap: 0.6rem;
+  overflow: hidden;
+  display: flex;
+  gap: 0;
+  padding-inline: var(--contentPadding);
+}
+
+.wrapperAnimated {
+  position: relative;
+}
+
+.wrapperAnimated:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+      linear-gradient(
+          90deg,
+          rgba(36, 36, 36, 85) 0%,
+          rgba(0, 0, 0, 0) calc(var(--contentPadding) * 2),
+          rgba(0, 0, 0, 0) calc(100% - (var(--contentPadding) * 2)),
+          rgba(36, 36, 36, 85) 100%);
+}
+
+.marquee {
+  display: flex;
   width: fit-content;
   animation: roll infinite linear;
+}
+
+.marquee > li {
+  margin-right: var(--itemGap);
 }
 
 @keyframes roll {
@@ -8,6 +38,6 @@
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }

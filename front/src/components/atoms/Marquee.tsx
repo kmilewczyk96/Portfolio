@@ -17,18 +17,12 @@ export default function Marquee({className, elementsToDisplay}: IProps): ReactEl
   const marqueeWrapper = useRef(null);
   const [animationSpeed, setAnimationSpeed] = useState(0);
 
-  let content: ReactElement =
-    <>
-      {elementsToDisplay.map((el, index) => (
-        <li key={index}>{el}</li>
-      ))}
-    </>
-
+  let wrapperClasses: string[] = [styles.wrapper, className];
+  animationSpeed !== 0 && wrapperClasses.push(styles.wrapperAnimated);
 
   useLayoutEffect(() => {
-    console.log("triggered!")
     // @ts-ignore
-    const marqueeWidth: number = marqueeWrapper.current.clientWidth;
+    const marqueeWidth: number = marqueeWrapper?.current.offsetWidth;
     // @ts-ignore
     if (marqueeWidth > marqueeWrapper.current.parentElement.offsetWidth) {
       setAnimationSpeed(marqueeWidth / 150);
@@ -36,12 +30,29 @@ export default function Marquee({className, elementsToDisplay}: IProps): ReactEl
   }, [])
 
   return (
-    <ul
-      ref={marqueeWrapper}
-      style={{animationDuration: `${animationSpeed}s`}}
-      className={[styles.wrapper, className].join(" ")}
+    <div
+      key={animationSpeed}
+      className={wrapperClasses.join(" ")}
     >
-      {animationSpeed === 0 ? content : [content, content]}
-    </ul>
+      <ul
+        ref={marqueeWrapper}
+        className={styles.marquee}
+        style={{animationDuration: `${animationSpeed}s`}}
+      >
+        {elementsToDisplay.map((el, index) => (
+          <li key={index}>{el}</li>
+        ))}
+      </ul>
+      {animationSpeed !== 0 && (
+        <ul
+          className={styles.marquee}
+          style={{animationDuration: `${animationSpeed}s`}}
+        >
+          {elementsToDisplay.map((el, index) => (
+            <li key={index}>{el}</li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }

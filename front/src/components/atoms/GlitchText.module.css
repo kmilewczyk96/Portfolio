@@ -4,7 +4,8 @@
 
 .wrapper > span:not(.nonAbsolute) {
   position: absolute;
-  top: 0;
+  inset: 0;
+  padding: inherit;
 }
 
 .wrapper > *:first-child {
@@ -95,64 +96,64 @@
 
 @keyframes glitchTop {
   0% {
-    left: -0.05em;
+    transform: translateX(-0.05em);
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
   }
   2% {
-    left: -0.05em;
+    transform: translateX(-0.05em);
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
   }
   2.1% {
-    left: 0;
+    transform: translateX(0);
   }
   12% {
-    left: 0;
+    transform: translateX(0);
   }
   12.1% {
-    left: -0.05em;
+    transform: translateX(-0.05em);
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
   }
   13% {
-    left: -0.05em;
+    transform: translateX(-0.05em);
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
   }
   13.1% {
-    left: 0;
+    transform: translateX(0);
   }
   100% {
-    left: 0;
+    transform: translateX(0);
   }
 
 }
 
 @keyframes glitchBottom {
   0% {
-    left: 0.05em;
+    transform: translateX(0.05em);
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
   }
   2% {
-    left: 0.05em;
+    transform: translateX(0.05em);
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
   }
   2.1% {
-    left: 0;
+    transform: translateX(0);
   }
   15% {
-    left: 0;
+    transform: translateX(0);
   }
   15.1% {
-    left: 0.05em;
+    transform: translateX(0.05em);
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
   }
   16% {
-    left: 0.05em;
+    transform: translateX(0.05em);
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
   }
   16.1% {
-    left: 0;
+    transform: translateX(0);
   }
   100% {
-    left: 0;
+    transform: translateX(0);
   }
 
 }

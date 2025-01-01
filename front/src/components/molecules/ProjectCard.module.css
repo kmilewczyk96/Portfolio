@@ -11,13 +11,6 @@
   margin-bottom: 1.2rem;
 }
 
-.projectImage {
-  object-fit: cover;
-  width: 100%;
-  aspect-ratio: 16/9;
-  filter: grayscale(50%);
-}
-
 .imageWrapper:after {
   content: "";
   width: 100%;
@@ -28,13 +21,21 @@
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(26, 26, 26, 85) 100%);
 }
 
+.projectImage {
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 16/9;
+  filter: grayscale(50%);
+}
+
 .infoWrapper {
-  padding-inline: var(--contentPadding);
+
 }
 
 .projectTitle {
   font-size: 4.8rem;
   font-weight: 600;
+  padding-inline: var(--contentPadding);
   margin-bottom: 1.2rem;
 }
 
@@ -47,11 +48,13 @@
 
 .projectDescription {
   font-size: 1.8rem;
+  padding-inline: var(--contentPadding);
   margin-bottom: 2.4rem;
 }
 
 .actions {
   display: flex;
+  padding-inline: var(--contentPadding);
   margin-bottom: 4.8rem;
 }
 
