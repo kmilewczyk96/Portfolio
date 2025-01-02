@@ -30,7 +30,7 @@ export default function ProjectCard({project, titleAnimationDelay=0}: IProps): R
         }/>
         <p className={styles.projectDescription}>{project.description}</p>
         <div className={styles.actions}>
-          <Button onClick={() => {}}>Details</Button>
+          <Button onClick={() => {}}>Source Code</Button>
         </div>
       </div>
     </article>

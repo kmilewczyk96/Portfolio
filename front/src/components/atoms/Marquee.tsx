@@ -41,7 +41,7 @@ export default function Marquee({className, elementsToDisplay}: IProps): ReactEl
         const wrapperWidth: number = marqueeRef.current.parentElement.offsetWidth;
 
         if (marqueeWidth > wrapperWidth) {
-          setAnimationSpeed(marqueeWidth / 150);
+          setAnimationSpeed(marqueeWidth / 100);
         } else {
           setAnimationSpeed(0);
         }

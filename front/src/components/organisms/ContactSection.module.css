@@ -1,0 +1,15 @@
+.contactSection {
+  background-color: #1a1a1a;
+  padding-block: 9.6rem;
+}
+
+.contentWrapper {
+  max-width: 192rem;
+  margin-inline: auto;
+  padding-inline: var(--contentPadding);
+}
+
+.sectionName {
+  font-size: 7.2rem;
+  margin-bottom: 9.6rem;
+}

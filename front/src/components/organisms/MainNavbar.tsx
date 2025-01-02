@@ -9,7 +9,6 @@ export default function MainNavbar(): ReactNode {
     <nav className={styles.mainNavbar}>
       <li className={styles.linkWrapper}>
         <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/About"}>About</NavLink>
         <NavLink to={"/Projects"}>Projects</NavLink>
         <NavLink to={"/Contact"}>Contact</NavLink>
       </li>

@@ -7,6 +7,7 @@ import project2 from "../assets/dummyDBGallery/wallpapersden.com_dark-night-in-a
 import project3 from "../assets/dummyDBGallery/wallpapersden.com_city-digital-art_1920x1080.jpg";
 import {projectTagTypes} from "../utils/enums.ts";
 import {IProject} from "../utils/interfaces.ts";
+import ContactSection from "../components/organisms/ContactSection.tsx";
 
 
 const dummyProjects: IProject[] = [
@@ -54,6 +55,7 @@ export default function HomePage(): ReactElement {
     <>
       <HeroSection/>
       <ProjectsDemoSection projects={dummyProjects}/>
+      <ContactSection/>
     </>
   );
 }
