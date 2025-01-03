@@ -1,0 +1,21 @@
+.wrapper {
+  color: #c3bcc2;
+}
+
+.wrapper > input,
+.wrapper > textarea {
+  display: block;
+  width: 100%;
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid #c3bcc2;
+  /*border: 1px solid #606364;*/
+  border-radius: 9px;
+  padding: 0.4em 0.8em;
+}
+
+.wrapper > label {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}

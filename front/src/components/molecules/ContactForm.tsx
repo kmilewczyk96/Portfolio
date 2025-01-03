@@ -6,8 +6,10 @@ import {
   Form,
   Formik
 } from "formik";
+
 import Button from "../atoms/Button.tsx";
 import BaseWrapper from "../atoms/BaseWrapper.tsx";
+import FormField from "../atoms/FormField.tsx";
 
 
 export default function ContactForm(): ReactElement {
@@ -23,17 +25,13 @@ export default function ContactForm(): ReactElement {
     >
       <Form className={styles.wrapper}>
         <div className={styles.fieldsWrapper}>
-          <div className={styles.inputsWrapper}>
-            <input/>
-            <input/>
-            <input/>
-          </div>
-          <div className={styles.textAreaWrapper}>
-            <textarea/>
-          </div>
+          <FormField label={"Name"} name={"name"} placeholder={"John Doe"}/>
+          <FormField label={"Email"} name={"email"} type={"email"} placeholder={"johny@example.com"}/>
+          <FormField label={"Company"} name={"company"} placeholder={"MegaCorp Inc."}/>
+          <FormField label={"Message"} name={"message"} component={"textArea"} placeholder={"Your message..."}/>
         </div>
         <BaseWrapper contentAlignment={"center"} className={styles.actions}>
-          <Button onClick={() => {}}>Submit</Button>
+          <Button type={"submit"} onClick={() => {}}>Submit</Button>
         </BaseWrapper>
       </Form>
     </Formik>

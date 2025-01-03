@@ -99,9 +99,4 @@ input, textarea {
   display: block;
   font: inherit;
   resize: none;
-  color: #c3bcc2;
-  background-color: transparent;
-  border: 1px solid #c3bcc2;
-  border-radius: 9px;
-  padding: 0.2em 0.4em;
 }
