@@ -5,7 +5,7 @@
 .wrapper > input,
 .wrapper > textarea {
   display: block;
-  width: 100%;
+  width: 32ch;
   color: inherit;
   background-color: transparent;
   border: 1px solid #c3bcc2;

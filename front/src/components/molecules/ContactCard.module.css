@@ -1,0 +1,17 @@
+.wrapper {
+  margin-block: auto;
+  max-width: 48ch;
+  font-size: 2.4rem;
+  margin-inline: auto;
+}
+
+.socials {
+  margin-bottom: 2.4rem;
+}
+
+.content {
+  max-width: 48ch;
+  font-size: 2.4rem;
+  margin-inline: auto;
+}
+

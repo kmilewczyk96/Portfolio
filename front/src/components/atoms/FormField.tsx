@@ -5,8 +5,8 @@ import {ReactElement} from "react";
 import {Field, useField} from "formik";
 
 
-type inputType = "text" | "email"
-type componentType = "input" | "textArea"
+type inputType = "text" | "email";
+type componentType = "input" | "textarea";
 
 interface IProps {
   label: string,
@@ -30,5 +30,5 @@ export default function FormField(
         <p>{meta.error}</p>
       ) : null}
     </div>
-  )
+  );
 }
