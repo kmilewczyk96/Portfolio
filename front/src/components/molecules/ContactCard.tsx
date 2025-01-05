@@ -20,6 +20,10 @@ export default function ContactCard({className}: IProps): ReactElement {
           Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
         </p>
       </div>
+      <div className={styles.statusWrapper}>
+        <p>Location: Warsaw, PL</p>
+        <p>Status: Available instantly.</p>
+      </div>
     </div>
   );
 }
