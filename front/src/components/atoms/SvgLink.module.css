@@ -1,0 +1,15 @@
+.base {
+  width: 3.6rem;
+  aspect-ratio: 1;
+  fill: #c3bcc2;
+  transition: filter 0.5s;
+}
+
+@media (hover: hover) {
+  .base:hover {
+    filter: drop-shadow(0 0 10px #c3bcc2);
+  }
+  .base:active {
+    filter: none;
+  }
+}
