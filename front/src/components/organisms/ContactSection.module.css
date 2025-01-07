@@ -46,7 +46,7 @@
   filter: blur(1rem);
 }
 
-.contactWrapper:focus-within > .background::after {
+.contactForm:focus-within + div:after {
   filter: blur(4rem);
 }
 

@@ -14,9 +14,9 @@ export default function ContactSection(): ReactElement {
       <div className={styles.contentWrapper}>
         <GlitchText text={"Contact"} className={styles.sectionName} htmlTextTag={htmlTextTags.h3}/>
         <div className={styles.contactWrapper}>
-          <div className={styles.background}/>
           <ContactCard className={styles.contactCard}/>
           <ContactForm className={styles.contactForm}/>
+          <div className={styles.background}/>
         </div>
       </div>
     </section>

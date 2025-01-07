@@ -6,6 +6,7 @@
 }
 
 @media (hover: hover) {
+  /*.link:focus > .base,*/
   .base:hover {
     filter: drop-shadow(0 0 10px #c3bcc2);
   }
