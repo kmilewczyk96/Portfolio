@@ -12,12 +12,13 @@ import {IProject} from "../../utils/interfaces.ts";
 
 interface IProps {
   project: IProject,
-  titleAnimationDelay?: number
+  titleAnimationDelay?: number,
+  className?: string | undefined,
 }
 
-export default function ProjectCard({project, titleAnimationDelay=0}: IProps): ReactElement {
+export default function ProjectCard({project, titleAnimationDelay=0, className=undefined}: IProps): ReactElement {
   return (
-    <article className={styles.wrapper}>
+    <article className={[styles.wrapper, className].join(" ")}>
       <div className={styles.imageWrapper}>
         <img src={project.imgSource} alt={`${project.title} project screenshot.`} className={styles.projectImage}/>
       </div>

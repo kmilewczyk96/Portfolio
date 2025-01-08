@@ -2,6 +2,7 @@ import styles from "./ProjectsDemoSection.module.css";
 
 import {ReactElement} from "react";
 
+import ProjectsCarousel3D from "./ProjectsCarousel3D.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import ProjectCard from "../molecules/ProjectCard.tsx";
 import {htmlTextTags} from "../../utils/enums.ts";
@@ -21,11 +22,15 @@ export default function ProjectsDemoSection({projects}: IProps): ReactElement {
           className={styles.sectionName}
           htmlTextTag={htmlTextTags.h3}
         />
-        <ul className={styles.projectsShowcase}>
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} titleAnimationDelay={index * 0.5 + 2}/>
-          ))}
-        </ul>
+        {projects.length <= 3 ? (
+          <ul className={styles.projectsShowcase}>
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} titleAnimationDelay={index * 0.5 + 2}/>
+            ))}
+          </ul>
+        ) : (
+          <ProjectsCarousel3D projects={projects}/>
+        )}
       </div>
     </section>
   );

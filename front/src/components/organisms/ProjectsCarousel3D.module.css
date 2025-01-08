@@ -1,0 +1,46 @@
+.wrapper {
+  display: grid;
+  grid-template-areas: "left center right";
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  gap: 2.4rem;
+  max-height: 300px;
+}
+
+.carouselCard {
+  width: 72rem;
+  transition: all 1s;
+  grid-area: center;
+}
+
+.prev {
+  grid-area: left;
+  opacity: 0;
+}
+
+.left {
+  position: relative;
+  grid-area: left;
+  opacity: 0.5;
+  transform: rotateY(-30deg)
+}
+
+.active {
+  position: relative;
+  grid-area: center;
+  opacity: 1;
+  z-index: 5;
+  /*transform: translateZ(150px);*/
+}
+
+.right {
+  position: relative;
+  grid-area: right;
+  opacity: 0.5;
+  transform: rotateY(30deg);
+}
+
+.next {
+  grid-area: right;
+  opacity: 0;
+}
