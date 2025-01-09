@@ -1,46 +1,41 @@
 .wrapper {
+  justify-items: center;
   display: grid;
-  grid-template-areas: "left center right";
+  grid-template-areas: "scene";
   transform-style: preserve-3d;
   perspective: 1000px;
-  gap: 2.4rem;
   max-height: 300px;
 }
 
 .carouselCard {
+  opacity: 0;
+  grid-area: scene;
   width: 72rem;
   transition: all 1s;
-  grid-area: center;
 }
 
 .prev {
-  grid-area: left;
   opacity: 0;
+  transform: rotateY(-45deg) translateX(-200%);
 }
 
 .left {
-  position: relative;
-  grid-area: left;
-  opacity: 0.5;
-  transform: rotateY(-30deg)
+  opacity: 1;
+  transform: rotateY(-15deg) translateX(-100%);
 }
 
 .active {
-  position: relative;
-  grid-area: center;
   opacity: 1;
   z-index: 5;
-  /*transform: translateZ(150px);*/
+  /*transform: translateZ(50px);*/
 }
 
 .right {
-  position: relative;
-  grid-area: right;
-  opacity: 0.5;
-  transform: rotateY(30deg);
+  opacity: 1;
+  transform: rotateY(15deg) translateX(100%);
 }
 
 .next {
-  grid-area: right;
   opacity: 0;
+  transform: rotateY(45deg) translateX(200%);
 }

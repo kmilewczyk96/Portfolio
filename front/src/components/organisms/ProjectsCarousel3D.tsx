@@ -11,11 +11,11 @@ interface IProps {
 }
 
 enum classes {
-  "prev",
-  "left",
-  "active",
-  "right",
   "next",
+  "right",
+  "active",
+  "left",
+  "prev",
 }
 
 export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
@@ -25,9 +25,10 @@ export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
     }))
   )
 
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(1)
 
   function handleClick() {
+    console.log(carouselItems.length)
     setCurrentIndex((prevState): number => prevState + 1)
   }
 
@@ -37,7 +38,7 @@ export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
       <ul className={styles.wrapper}>
       {carouselItems.map((project, index) => (
         <ProjectCard key={project.id} project={project} className={
-          [styles.carouselCard, styles[classes[index - currentIndex]]].join(" ")
+          [styles.carouselCard, styles[classes[(index + currentIndex) % carouselItems.length]]].join(" ")
         }/>
       ))}
     </ul>
