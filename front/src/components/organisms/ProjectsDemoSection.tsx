@@ -24,8 +24,8 @@ export default function ProjectsDemoSection({projects}: IProps): ReactElement {
         />
         {projects.length <= 2 ? (
           <ul className={styles.projectsShowcase}>
-            {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} titleAnimationDelay={index * 0.5 + 2}/>
+            {projects.map((project: IProject): ReactElement => (
+              <ProjectCard key={project.id} project={project}/>
             ))}
           </ul>
         ) : (

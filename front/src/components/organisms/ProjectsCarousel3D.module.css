@@ -18,43 +18,47 @@
 }
 
 .carouselCard {
+  filter: saturate(25%) blur(3px) brightness(75%);
   opacity: 0;
   grid-area: scene;
   width: 60rem;
-  transition: transform 0.7s, opacity 0.7s, filter 0.5s;
+  transition: transform 0.7s, opacity 0.5s, filter 0.5s, box-shadow 0.5s;
 }
 
 .prev {
-  opacity: 0;
-  transform: rotateY(-45deg) translateX(-200%);
+  transform: rotateY(-30deg) translateX(-200%);
 }
 
 .left {
   opacity: 1;
   transform: rotateY(-10deg) translateX(-120%);
-  filter: blur(2px);
 }
 
 .active {
-  opacity: 1;
   z-index: 5;
+  opacity: 1;
+  filter: none;
+  box-shadow: 0 0 15px 5px #000;
 }
 
 .right {
   opacity: 1;
   transform: rotateY(10deg) translateX(120%);
-  filter: blur(2px);
 }
 
 .next {
-  opacity: 0;
-  transform: rotateY(45deg) translateX(200%);
+  transform: rotateY(30deg) translateX(200%);
 }
 
 .chevronBtn {
   z-index: 2;
   aspect-ratio: 1;
   padding: 0.5rem;
+  transition: box-shadow 0.5s;
+
+  &:hover:not(&:active) {
+    box-shadow: 0 0 15px 2px #c3bcc2;
+  }
 }
 
 .chevronBtnLeft {

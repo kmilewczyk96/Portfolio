@@ -5,25 +5,22 @@ import {ReactElement} from "react";
 import Button from "../atoms/Button.tsx";
 import Marquee from "../atoms/Marquee.tsx";
 import TagPill from "../atoms/TagPill.tsx";
-import GlitchText from "../atoms/GlitchText.tsx";
-import {htmlTextTags} from "../../utils/enums.ts";
 import {IProject} from "../../utils/interfaces.ts";
 
 
 interface IProps {
   project: IProject,
-  titleAnimationDelay?: number,
   className?: string | undefined,
 }
 
-export default function ProjectCard({project, titleAnimationDelay=0, className=undefined}: IProps): ReactElement {
+export default function ProjectCard({project, className=undefined}: IProps): ReactElement {
   return (
     <article className={[styles.wrapper, className].join(" ")}>
       <div className={styles.imageWrapper}>
         <img src={project.imgSource} alt={`${project.title} project screenshot.`} className={styles.projectImage}/>
       </div>
       <div className={styles.infoWrapper}>
-        <GlitchText text={project.title} className={styles.projectTitle} htmlTextTag={htmlTextTags.h4} animationDelaySeconds={titleAnimationDelay}/>
+        <h4 className={styles.projectTitle}>{project.title}</h4>
         <Marquee
           className={styles.projectTags}
           elementsToDisplay={
