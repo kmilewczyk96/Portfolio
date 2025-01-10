@@ -1,17 +1,27 @@
 .wrapper {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+      "topLeft carousel topRight"
+      "buttonLeft carousel buttonRight"
+      "bottomLeft carousel bottomRight";
   justify-items: center;
+  isolation: isolate;
+}
+
+.carouselElements {
+  grid-area: carousel;
   display: grid;
   grid-template-areas: "scene";
   transform-style: preserve-3d;
   perspective: 1000px;
-  max-height: 300px;
 }
 
 .carouselCard {
   opacity: 0;
   grid-area: scene;
-  width: 72rem;
-  transition: all 1s;
+  width: 60rem;
+  transition: transform 0.7s, opacity 0.7s, filter 0.5s;
 }
 
 .prev {
@@ -21,21 +31,38 @@
 
 .left {
   opacity: 1;
-  transform: rotateY(-15deg) translateX(-100%);
+  transform: rotateY(-10deg) translateX(-120%);
+  filter: blur(2px);
 }
 
 .active {
   opacity: 1;
   z-index: 5;
-  /*transform: translateZ(50px);*/
 }
 
 .right {
   opacity: 1;
-  transform: rotateY(15deg) translateX(100%);
+  transform: rotateY(10deg) translateX(120%);
+  filter: blur(2px);
 }
 
 .next {
   opacity: 0;
   transform: rotateY(45deg) translateX(200%);
+}
+
+.chevronBtn {
+  z-index: 2;
+  aspect-ratio: 1;
+  padding: 0.5rem;
+}
+
+.chevronBtnLeft {
+  grid-area: buttonLeft;
+  justify-self: left;
+}
+
+.chevronBtnRight {
+  grid-area: buttonRight;
+  justify-self: right;
 }

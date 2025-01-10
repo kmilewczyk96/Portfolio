@@ -11,11 +11,11 @@ interface IProps {
 }
 
 enum classes {
-  "next",
-  "right",
-  "active",
-  "left",
   "prev",
+  "left",
+  "active",
+  "right",
+  "next",
 }
 
 export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
@@ -27,21 +27,40 @@ export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
 
   const [currentIndex, setCurrentIndex] = useState(1)
 
-  function handleClick() {
-    console.log(carouselItems.length)
-    setCurrentIndex((prevState): number => prevState + 1)
+  function handleSpinRight() {
+    setCurrentIndex((prevState): number => {
+      if (prevState === 0) {
+        return carouselItems.length - 1;
+      }
+      return (prevState - 1) % carouselItems.length;
+    })
+  }
+
+  function handleSpinLeft() {
+    setCurrentIndex((prevState): number => (prevState + 1) % carouselItems.length);
   }
 
   return (
-    <>
-      <button onClick={handleClick}>Click me</button>
-      <ul className={styles.wrapper}>
-      {carouselItems.map((project, index) => (
-        <ProjectCard key={project.id} project={project} className={
-          [styles.carouselCard, styles[classes[(index + currentIndex) % carouselItems.length]]].join(" ")
+    <div className={styles.wrapper}>
+      <button className={[styles.chevronBtn, styles.chevronBtnLeft].join(" ")} onClick={handleSpinLeft}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#242424" viewBox="0 0 256 256">
+          <path
+            d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/>
+        </svg>
+      </button>
+      <button className={[styles.chevronBtn, styles.chevronBtnRight].join(" ")} onClick={handleSpinRight}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#242424" viewBox="0 0 256 256">
+          <path
+            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/>
+        </svg>
+      </button>
+      <ul className={styles.carouselElements}>
+        {carouselItems.map((project, index) => (
+          <ProjectCard key={project.id} project={project} className={
+            [styles.carouselCard, styles[classes[(index + currentIndex) % carouselItems.length]]].join(" ")
         }/>
       ))}
     </ul>
-    </>
+    </div>
   );
 }
