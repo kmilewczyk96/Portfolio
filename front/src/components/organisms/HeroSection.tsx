@@ -10,7 +10,7 @@ import {htmlTextTags} from "../../utils/enums.ts";
 
 export default function HeroSection(): ReactElement {
   return (
-    <section id={"heroSection"} className={styles.heroSection}>
+    <section id={"home"} className={styles.heroSection}>
       <div className={styles.aestheticA}/>
       <div className={styles.aestheticB}/>
       <div className={styles.contentWrapper}>

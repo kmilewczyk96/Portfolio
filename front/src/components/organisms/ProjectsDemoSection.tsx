@@ -15,7 +15,7 @@ interface IProps {
 
 export default function ProjectsDemoSection({projects}: IProps): ReactElement {
   return (
-    <section id={"projectsDemoSection"} className={styles.projectsDemoSection}>
+    <section id={"projects"} className={styles.projectsDemoSection}>
       <div className={styles.contentWrapper}>
         <GlitchText
           text={"Projects"}

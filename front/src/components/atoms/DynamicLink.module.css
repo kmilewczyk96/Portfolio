@@ -1,0 +1,17 @@
+.dynamicLink {
+  color: #aba4aa;
+  font-size: 2.4rem;
+  font-weight: 400;
+  transition: color 0.5s, border 0.5s, text-shadow 0.5s;
+  border: 1px solid transparent;
+  padding-block: 0.2rem;
+}
+
+@media (hover: hover) {
+  .dynamicLink:hover,
+  .dynamicLink:active {
+    color: #c3bcc2;
+    border-bottom-color: #c3bcc2;
+    text-shadow: 0 0 2px #c3bcc2;
+  }
+}

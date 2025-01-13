@@ -1,16 +1,16 @@
 import styles from "./MainNavbar.module.css";
 
 import {ReactNode} from "react";
-import {NavLink} from "react-router";
+import DynamicLink from "../atoms/DynamicLink.tsx";
 
 
 export default function MainNavbar(): ReactNode {
   return (
     <nav className={styles.mainNavbar}>
       <li className={styles.linkWrapper}>
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/Projects"}>Projects</NavLink>
-        <NavLink to={"/Contact"}>Contact</NavLink>
+        <DynamicLink goTo={"home"}>Home</DynamicLink>
+        <DynamicLink goTo={"projects"}>Projects</DynamicLink>
+        <DynamicLink goTo={"contact"}>Contact</DynamicLink>
       </li>
     </nav>
   );

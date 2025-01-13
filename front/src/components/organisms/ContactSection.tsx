@@ -10,7 +10,7 @@ import {htmlTextTags} from "../../utils/enums.ts";
 
 export default function ContactSection(): ReactElement {
   return (
-    <section id={"contactSection"} className={styles.contactSection}>
+    <section id={"contact"} className={styles.contactSection}>
       <div className={styles.contentWrapper}>
         <GlitchText text={"Contact"} className={styles.sectionName} htmlTextTag={htmlTextTags.h3}/>
         <div className={styles.contactWrapper}>
