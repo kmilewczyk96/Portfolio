@@ -9,6 +9,11 @@ export interface IProject {
   description: string,
 }
 
+export interface ISection {
+  id: string,
+  label: string,
+}
+
 export interface ITags {
   name: string,
   type: projectTagTypes

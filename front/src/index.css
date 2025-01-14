@@ -12,6 +12,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -39,10 +40,6 @@ html {
 }
 
 body {
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 button {
@@ -60,6 +57,8 @@ a:visited {
 }
 
 section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   /* Code duplication because not all browsers support svh unit yet.*/
   height: max(72rem, 100vh);
   height: max(72rem, 100svh);
