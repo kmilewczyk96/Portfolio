@@ -1,4 +1,4 @@
-import {ReactElement, useRef} from "react";
+import {ReactElement, RefObject, useEffect, useRef} from "react";
 
 import HeroSection from "../components/organisms/HeroSection.tsx";
 import ProjectsDemoSection from "../components/organisms/ProjectsDemoSection.tsx";
@@ -61,9 +61,39 @@ const dummyProjects: IProject[] = [
 
 
 export default function HomePage(): ReactElement {
-  const heroRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
+  const heroRef: RefObject<HTMLElement> = useRef(null);
+  const projectsRef: RefObject<HTMLElement> = useRef(null);
+  const contactRef: RefObject<HTMLElement> = useRef(null);
+  const refs: RefObject<HTMLElement>[] = [heroRef, projectsRef, contactRef];
+  console.log(refs)
+
+  function fn(entries: IntersectionObserverEntry[]): void {
+    console.log(entries)
+    if (entries.length !== 1) {
+      return;
+    }
+    const [entry] = entries;
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("snap");
+    } else {
+      refs.forEach(ref => ref.current?.classList.remove("snap"));
+    }
+  }
+
+  const options = {
+    root: null,
+    rootMargin: "-20px 0px",
+    threshold: [0],
+  }
+
+  useEffect((): () => void => {
+    const observer = new IntersectionObserver(fn, options);
+    refs.forEach(
+      ref => observer.observe(ref.current!)
+    );
+    return (): void => refs.forEach(ref => observer.unobserve(ref.current!));
+  }, []);
 
   return (
     <>

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-/* TODO: if Intersection Observer works remove redundant comments in body & section tags.*/
 
 * {
   box-sizing: border-box;
@@ -14,7 +13,7 @@
 
 html {
   font-size: 62.5%;
-  /*scroll-snap-type: y mandatory;*/
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -59,9 +58,8 @@ a:visited {
 }
 
 section {
-  /*scroll-snap-align: start;*/
-  /*scroll-snap-stop: always;*/
   /* Code duplication because not all browsers support svh unit yet.*/
+  min-height: 100vh;
   min-height: 100svh;
   color: #c3bcc2;
 }
@@ -95,4 +93,8 @@ input, textarea {
   display: block;
   font: inherit;
   resize: none;
+}
+
+.snap {
+  scroll-snap-align: start;
 }
