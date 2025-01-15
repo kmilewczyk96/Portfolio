@@ -1,4 +1,4 @@
-import {ReactElement} from "react";
+import {ReactElement, useRef} from "react";
 
 import HeroSection from "../components/organisms/HeroSection.tsx";
 import ProjectsDemoSection from "../components/organisms/ProjectsDemoSection.tsx";
@@ -61,11 +61,15 @@ const dummyProjects: IProject[] = [
 
 
 export default function HomePage(): ReactElement {
+  const heroRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <>
-      <HeroSection/>
-      <ProjectsDemoSection projects={dummyProjects}/>
-      <ContactSection/>
+      <HeroSection ref={heroRef}/>
+      <ProjectsDemoSection projects={dummyProjects} ref={projectsRef}/>
+      <ContactSection ref={contactRef}/>
     </>
   );
 }

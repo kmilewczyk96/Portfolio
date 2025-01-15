@@ -7,7 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router";
 import HomePage from "./pages/HomePage.tsx";
 import Root from "./pages/Root.tsx";
 
-
+// TODO: remove React Router as it is obsolete.
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>

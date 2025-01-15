@@ -1,6 +1,6 @@
 import styles from "./MainNavbar.module.css";
 
-import {ReactElement, useEffect} from "react";
+import {ReactElement} from "react";
 
 import DynamicLink from "../atoms/DynamicLink.tsx";
 import {ISection} from "../../utils/interfaces.ts";
@@ -11,15 +11,6 @@ interface IProps {
 }
 
 export default function MainNavbar({sections}: IProps): ReactElement {
-  useEffect(() => {
-    function onScroll(): void {
-      console.log('scrolling');
-    }
-    window.addEventListener('scroll', onScroll);
-
-    return (): void => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
     <nav className={styles.mainNavbar}>
       <li className={styles.linkWrapper}>
