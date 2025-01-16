@@ -11,7 +11,7 @@
   color: #c3bcc2;
   border-bottom-color: #c3bcc2;
   text-shadow: 0 0 2px #c3bcc2;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 @media (hover: hover) {

@@ -5,14 +5,19 @@ import {ReactElement} from "react";
 
 interface IProps {
   goTo: string,
-  className?: string | undefined,
+  isActive: boolean,
   children: string,
 }
 
-export default function DynamicLink({goTo, className, children}: IProps): ReactElement {
+export default function DynamicLink({goTo, isActive, children}: IProps): ReactElement {
   function handleClick(): void {
     document.getElementById(goTo)!.scrollIntoView();
   }
 
-  return <button onClick={handleClick} className={[styles.dynamicLink, className].join(" ")}>{children}</button>;
+  return (
+    <button
+      onClick={handleClick}
+      className={[styles.dynamicLink, isActive ? styles.active : undefined].join(" ")}
+    >{children}</button>
+  );
 }

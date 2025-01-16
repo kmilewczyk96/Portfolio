@@ -8,14 +8,19 @@ import {ISection} from "../../utils/interfaces.ts";
 
 interface IProps {
   sections: ISection[],
+  activeSectionID: string,
 }
 
-export default function MainNavbar({sections}: IProps): ReactElement {
+export default function MainNavbar({sections, activeSectionID}: IProps): ReactElement {
   return (
     <nav className={styles.mainNavbar}>
       <li className={styles.linkWrapper}>
         {sections.map(section =>
-          <DynamicLink key={section.id} goTo={section.id}>{section.label}</DynamicLink>
+          <DynamicLink
+            key={section.id}
+            goTo={section.id}
+            isActive={activeSectionID === section.id}
+          >{section.label}</DynamicLink>
         )}
       </li>
     </nav>

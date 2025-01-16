@@ -1,7 +1,6 @@
 import styles from "./SvgLink.module.css";
 
 import {ReactElement} from "react";
-import {Link} from "react-router";
 
 
 interface IProps {
@@ -17,10 +16,10 @@ export enum socialIcons {
 
 export default function SvgLink({goTo, icon, target="_blank"}: IProps): ReactElement {
   return (
-    <Link className={styles.link} to={goTo} target={target} rel="noopener">
+    <a className={styles.link} href={goTo} target={target} rel="noopener">
       <svg className={styles.base} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
         <path d={icon}/>
       </svg>
-    </Link>
+    </a>
   );
 }
