@@ -59,7 +59,6 @@ const dummyProjects: IProject[] = [
   // }
 ]
 
-
 export default function HomePage(): ReactElement {
   const heroRef: RefObject<HTMLElement> = useRef(null);
   const projectsRef: RefObject<HTMLElement> = useRef(null);
@@ -74,16 +73,19 @@ export default function HomePage(): ReactElement {
     }
     const [entry] = entries;
 
-    if (entry.isIntersecting) {
-      entry.target.classList.add("snap");
+    if (entry.isIntersecting && entry.boundingClientRect.top >= 0) {
+      entry.target.classList.add("snapToStart");
+    } else if (entry.isIntersecting && entry.boundingClientRect.top < 0) {
+      entry.target.classList.add("snapToEnd");
     } else {
-      refs.forEach(ref => ref.current?.classList.remove("snap"));
+      refs.forEach(ref => ref.current?.classList.remove("snapToStart"));
+      refs.forEach(ref => ref.current?.classList.remove("snapToEnd"));
     }
   }
 
   const options = {
     root: null,
-    rootMargin: "-20px 0px",
+    rootMargin: "-50px 0px",
     threshold: [0],
   }
 
