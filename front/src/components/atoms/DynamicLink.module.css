@@ -1,19 +1,39 @@
 .dynamicLink {
+  position: relative;
+  width: 100%;
   color: #aba4aa;
   font-size: 2.4rem;
   font-weight: 400;
   transition: color 0.5s, border 0.5s, text-shadow 0.5s;
-  border: 1px solid transparent;
-  padding-block: 0.2rem;
+  padding-block: 0.4rem;
 }
 
-.active {
+.dynamicLink::before,
+.dynamicLink::after {
+  opacity: 0.1;
+  content: "";
+  position: absolute;
+  inset: -0.2rem  0 100% 0;
+  background-color: #c3bcc2;
+  transition: opacity 0.5s;
+  z-index: -1;
+}
+
+.active.dynamicLink {
   color: #c3bcc2;
-  border-bottom-color: #c3bcc2;
   text-shadow: 0 0 2px #c3bcc2;
-  margin-inline: auto;
 }
 
+.active.dynamicLink::before,
+.active.dynamicLink::after {
+  opacity: 1;
+}
+
+.active::after {
+  filter: blur(15px);
+}
+
+/* FIXME: fix active and hover states on different devices.*/
 @media (hover: hover) {
   .dynamicLink:hover,
   .dynamicLink:active {

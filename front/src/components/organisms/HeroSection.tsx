@@ -20,8 +20,6 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
     return (
       <Section sectionID={"home"} ref={ref} className={styles.heroSection}>
         <>
-          <div className={styles.aestheticA}/>
-          <div className={styles.aestheticB}/>
           <div className={styles.contentWrapper}>
             <div className={styles.personalInfoWrapper}>
               <p className={styles.title}>Python Developer</p>

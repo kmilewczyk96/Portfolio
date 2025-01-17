@@ -62,6 +62,7 @@ const dummyProjects: IProject[] = [
 
 const sections: ISection[] = [
   {id: 'home', label: 'Home'},
+  {id: 'about', label: 'About'},
   {id: 'projects', label: 'Projects'},
   {id: 'contact', label: 'Contact'},
 ]
@@ -109,8 +110,8 @@ function App(): ReactElement {
 
   return (
     <>
-      <MainNavbar sections={sections} activeSectionID={activeSectionID}/>
       <HeroSection ref={heroRef}/>
+      <MainNavbar sections={sections} activeSectionID={activeSectionID}/>
       <ProjectsDemoSection projects={dummyProjects} ref={projectsRef}/>
       <ContactSection ref={contactRef}/>
     </>

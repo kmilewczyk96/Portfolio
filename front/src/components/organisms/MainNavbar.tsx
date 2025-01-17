@@ -13,7 +13,9 @@ interface IProps {
 
 export default function MainNavbar({sections, activeSectionID}: IProps): ReactElement {
   return (
-    <nav className={styles.mainNavbar}>
+    <nav className={
+      [styles.mainNavbar, activeSectionID === "home" ? styles.hidden : undefined].join(" ")
+    }>
       <li className={styles.linkWrapper}>
         {sections.map(section =>
           <DynamicLink
