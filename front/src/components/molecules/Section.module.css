@@ -1,4 +1,3 @@
 .wrapper:not(#home) {
-  background-color: #1a1a1a;
   padding-block: 9.6rem;
 }

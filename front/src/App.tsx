@@ -110,6 +110,8 @@ function App(): ReactElement {
 
   return (
     <>
+      <div id={"snow"}/>
+      <div id={"vignette"}/>
       <HeroSection ref={heroRef}/>
       <MainNavbar sections={sections} activeSectionID={activeSectionID}/>
       <ProjectsDemoSection projects={dummyProjects} ref={projectsRef}/>

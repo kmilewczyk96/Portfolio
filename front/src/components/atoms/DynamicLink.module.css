@@ -33,14 +33,15 @@
   filter: blur(15px);
 }
 
-/* FIXME: fix active and hover states on different devices.*/
 @media (hover: hover) {
-  .dynamicLink:hover,
-  .dynamicLink:active,
-  .dynamicLink:active::before,
-  .dynamicLink:active::after {
+  .dynamicLink:hover:not(.active) {
     color: #c3bcc2;
     border-bottom-color: #c3bcc2;
     text-shadow: 0 0 2px #c3bcc2;
+
+    &::before,
+    &::after {
+      opacity: 0.5;
+    }
   }
 }

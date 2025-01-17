@@ -15,6 +15,7 @@
   flex-direction: column;
   background-color: #1a1a1a;
   justify-content: center;
+  z-index: 2;
   padding-inline: var(--contentPadding);
 }
 
@@ -41,6 +42,6 @@
 
 .photo {
   align-self: flex-end;
-  max-height: calc(100% - 6.4rem);
+  max-height: calc(100% - 2.4rem);
   margin-inline: auto;
 }
