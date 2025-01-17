@@ -21,7 +21,7 @@
 
 .active.dynamicLink {
   color: #c3bcc2;
-  text-shadow: 0 0 2px #c3bcc2;
+  text-shadow: 0 0 4px currentColor;
 }
 
 .active.dynamicLink::before,
@@ -36,7 +36,9 @@
 /* FIXME: fix active and hover states on different devices.*/
 @media (hover: hover) {
   .dynamicLink:hover,
-  .dynamicLink:active {
+  .dynamicLink:active,
+  .dynamicLink:active::before,
+  .dynamicLink:active::after {
     color: #c3bcc2;
     border-bottom-color: #c3bcc2;
     text-shadow: 0 0 2px #c3bcc2;
