@@ -8,6 +8,7 @@ import {
   forwardRef,
 } from "react";
 
+import Button from "../atoms/Button.tsx";
 import GlitchImage from "../atoms/GlitchImage.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import Section from "../molecules/Section.tsx";
@@ -35,6 +36,7 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
                 Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
                 Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
               </p>
+              <Button onClick={() => {}}>Learn More</Button>
             </div>
             <div className={styles.photoWrapper}>
               <GlitchImage

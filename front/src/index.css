@@ -108,8 +108,8 @@ input, textarea {
   inset: -25%;
   background: transparent url("assets/noise-transparent.png") repeat 0 0;
   opacity: 1;
-  /*animation: glitchAnimation 0.2s infinite;*/
-  filter: brightness(120%);
+  /*animation: glitchAnimation 0.5s infinite;*/
+  /*filter: brightness(120%);*/
 }
 
 #vignette {

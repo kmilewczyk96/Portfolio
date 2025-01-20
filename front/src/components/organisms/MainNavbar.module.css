@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 99;
-  background-color: rgba(26, 26, 26, 0.3);
+  background-color: rgba(26, 26, 26, 0.1);
   backdrop-filter: blur(3px);
   transition: opacity 0.5s;
   padding-top: 0.8rem;
@@ -11,10 +11,9 @@
 .linkWrapper {
   max-width: min(80rem, 100%);
   display: flex;
-  justify-content: flex-end;
   list-style: none;
   gap: 3.2rem;
-  padding: 0.6rem var(--contentPadding);
+  padding-top: 0.2rem;
   margin-inline: auto;
 }
 
