@@ -23,11 +23,13 @@ export default function FormField(
   const [_, meta] = useField(name);
 
   return (
-    <div className={[styles.wrapper, className].join(" ")}>
+    <div className={
+      [styles.wrapper, className, meta.error && meta.touched ? styles.error : undefined].join(" ")
+    }>
       <label htmlFor={name}>{label}</label>
       <Field name={name} type={type} placeholder={placeholder} component={component} rows={"8"}/>
       {meta.error && meta.touched ? (
-        <p>{meta.error}</p>
+        <span>{meta.error}</span>
       ) : null}
     </div>
   );

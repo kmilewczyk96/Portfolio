@@ -11,6 +11,7 @@ interface IProps {
   children: ReactElement,
 }
 
+// TODO: Remove this useless class. Instead add styling to index css in utils classes.
 export default function BaseWrapper({contentAlignment, className, children}: IProps): ReactElement {
   return (
     <div className={[styles.wrapper, styles[contentAlignment], className].join(" ")}>

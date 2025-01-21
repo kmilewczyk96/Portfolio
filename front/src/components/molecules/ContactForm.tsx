@@ -7,17 +7,31 @@ import {
   Formik
 } from "formik";
 
+import * as Yup from 'yup';
+
 import BaseWrapper from "../atoms/BaseWrapper.tsx";
 import Button from "../atoms/Button.tsx";
 import FormField from "../atoms/FormField.tsx";
+import {ObjectSchema} from "yup";
 
 
 interface IProps {
   className?: string | undefined,
 }
 
+const MessageSchema: ObjectSchema<object> = Yup.object().shape({
+  name: Yup.string()
+    .required("This field is required!"),
+  email: Yup.string()
+    .email("This value must be an email!")
+    .required("This field is required!"),
+  message: Yup.string()
+    .required("This field is required!")
+});
+
 export default function ContactForm({className = undefined}: IProps): ReactElement {
   return (
+    // TODO: Form validation.
     <Formik
       initialValues={{
         name: "",
@@ -25,10 +39,12 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
         company: "",
         message: ""
       }}
-      onSubmit={() => {}}
+      validationSchema={MessageSchema}
+      onSubmit={() => {console.log("validated!")}}
     >
       <Form className={[styles.wrapper, className].join(" ")}>
         <div className={styles.fieldsWrapper}>
+          {/* TODO: input styling - active & invalid.*/}
           <FormField label={"Name"} name={"name"} placeholder={"John Doe"}/>
           <FormField label={"Email"} name={"email"} type={"email"} placeholder={"doe@example.com"}/>
           <FormField label={"Company"} name={"company"} placeholder={"MegaCorp Inc."}/>

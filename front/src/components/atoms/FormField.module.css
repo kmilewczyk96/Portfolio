@@ -1,5 +1,15 @@
 .wrapper {
+  position: relative;
   color: #c3bcc2;
+}
+
+.wrapper.error {
+  color: hsl(from var(--fxRed) h s l / 1)!important;
+}
+
+.wrapper:focus-within > label,
+.wrapper:focus-within > span {
+  text-shadow: 0 0 10px currentColor;
 }
 
 .wrapper > input,
@@ -11,10 +21,33 @@
   border: 1px solid #c3bcc2;
   border-radius: 9px;
   padding: 0.4em 0.8em;
+
+  &:focus {
+    background-color: hsl(from var(--fxBlue) h s l / 0.1)!important;
+    border-color: hsl(from var(--fxBlue) h s l / 1)!important;
+    box-shadow: 0 0 0 3px hsl(from var(--fxBlue) h s l / 0.8)!important;
+  }
+}
+
+.wrapper.error > input,
+.wrapper.error > textarea {
+  background-color: hsl(from var(--fxRed) h s l / 0.1)!important;
+  border-color: hsl(from var(--fxRed) h s l / 1)!important;
+
+  &:focus {
+    border-color: hsl(from var(--fxRed) h s l / 1)!important;
+    box-shadow: 0 0 0 3px hsl(from var(--fxRed) h s l / 0.8)!important;
+  }
 }
 
 .wrapper > label {
   display: block;
   font-size: 1.8rem;
   margin-bottom: 1.2rem;
+}
+
+.wrapper > span {
+  position: absolute;
+  inset: auto 0.6rem -2.4rem auto;
+  font-size: 1.6rem;
 }
