@@ -31,7 +31,6 @@ const MessageSchema: ObjectSchema<object> = Yup.object().shape({
 
 export default function ContactForm({className = undefined}: IProps): ReactElement {
   return (
-    // TODO: Form validation.
     <Formik
       initialValues={{
         name: "",
@@ -44,14 +43,13 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
     >
       <Form className={[styles.wrapper, className].join(" ")}>
         <div className={styles.fieldsWrapper}>
-          {/* TODO: input styling - active & invalid.*/}
           <FormField label={"Name"} name={"name"} placeholder={"John Doe"}/>
           <FormField label={"Email"} name={"email"} type={"email"} placeholder={"doe@example.com"}/>
           <FormField label={"Company"} name={"company"} placeholder={"MegaCorp Inc."}/>
           <FormField label={"Message"} name={"message"} component={"textarea"} placeholder={"Your message..."}/>
         </div>
         <BaseWrapper contentAlignment={"center"} className={styles.actions}>
-          <Button type={"submit"} onClick={() => {}}>Submit</Button>
+          <Button type={"submit"}>Submit</Button>
         </BaseWrapper>
       </Form>
     </Formik>

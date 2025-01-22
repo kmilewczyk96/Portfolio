@@ -28,7 +28,7 @@ export default function ProjectCard({project, className=undefined}: IProps): Rea
         }/>
         <p className={styles.projectDescription}>{project.description}</p>
         <div className={styles.actions}>
-          <Button onClick={() => {}}>Source Code</Button>
+          <Button>Source Code</Button>
         </div>
       </div>
     </article>

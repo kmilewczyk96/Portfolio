@@ -1,9 +1,44 @@
 .buttonDefault {
-  color: #1a1a1a;
+  position: relative;
   font-size: 1.8rem;
   font-weight: 500;
+  background-color: #242424;
+  color: #c3bcc2;
   border-radius: 5px;
-  border: 1px solid transparent;
   padding: 0.6em 1.2em;
+}
+
+.buttonDefault,
+.buttonDefault::before,
+.buttonDefault::after {
+  transition: background-color 0.3s, opacity 0.3s, filter 0.3s, color 0.3s;
+}
+
+.buttonDefault::before,
+.buttonDefault::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
   background-color: #c3bcc2;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+@media (hover: hover) {
+  .buttonDefault:hover {
+    color: hsl(from var(--fxGreen) h s l / 1);
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+    &::after {
+      filter: blur(9px);
+      background-color: hsl(from var(--fxGreen) h s l / 1);
+    }
+  }
+  .buttonDefault:active {
+    &::after {
+      filter: blur(3px);
+    }
+  }
 }

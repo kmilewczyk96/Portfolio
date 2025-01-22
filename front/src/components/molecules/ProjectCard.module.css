@@ -44,8 +44,5 @@
 }
 
 .actions > button {
-  width: 100%;
-  background-color: #1a1a1a;
-  color: #c3bcc2;
-  border-color: #000;
+  margin-inline: auto;
 }

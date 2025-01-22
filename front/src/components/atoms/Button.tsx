@@ -6,7 +6,7 @@ type buttonType = "submit" | "button" | "reset";
 
 interface IProps {
   className?: "string",
-  onClick: () => any,
+  onClick?: () => any,
   type?: buttonType,
   children: ReactElement | string,
 }

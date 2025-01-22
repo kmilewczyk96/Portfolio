@@ -19,6 +19,7 @@ enum classes {
 }
 
 export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
+  // TODO: disable all cards except active one!
   const carouselItems: IProject[] = projects.length >= 5 ? projects : (
     projects.concat(projects.map((project) => {
       return {...project, id: "alt" + project.id}
