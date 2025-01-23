@@ -2,7 +2,7 @@
   position: relative;
   font-size: 1.8rem;
   font-weight: 500;
-  background-color: #242424;
+  background-color: #1a1a1a;
   color: #c3bcc2;
   border-radius: 5px;
   padding: 0.6em 1.2em;
@@ -18,7 +18,7 @@
 .buttonDefault::after {
   content: "";
   position: absolute;
-  inset: -0.5rem;
+  inset: -0.4rem;
   background-color: #c3bcc2;
   border-radius: inherit;
   z-index: -1;

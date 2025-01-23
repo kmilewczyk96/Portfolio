@@ -1,22 +1,21 @@
 import styles from "./Button.module.css";
 
-import {ReactElement} from "react";
+import {
+  ComponentPropsWithoutRef,
+  ReactElement
+} from "react";
 
-type buttonType = "submit" | "button" | "reset";
 
-interface IProps {
+interface IProps extends ComponentPropsWithoutRef<"button">{
   className?: "string",
-  onClick?: () => any,
-  type?: buttonType,
   children: ReactElement | string,
 }
 
-export default function Button({className, onClick, type = "button", children}: IProps): ReactElement {
+export default function Button({className, children, ...props}: IProps): ReactElement {
   return (
     <button
       className={[styles.buttonDefault, className].join(" ")}
-      type={type}
-      onClick={onClick}
+      {...props}
     >
       {children}
     </button>
