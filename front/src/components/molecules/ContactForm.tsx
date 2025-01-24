@@ -9,7 +9,6 @@ import {
 
 import * as Yup from 'yup';
 
-import BaseWrapper from "../atoms/BaseWrapper.tsx";
 import Button from "../atoms/Button.tsx";
 import FormField from "../atoms/FormField.tsx";
 import {ObjectSchema} from "yup";
@@ -48,9 +47,9 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
           <FormField label={"Company"} name={"company"} placeholder={"MegaCorp Inc."}/>
           <FormField label={"Message"} name={"message"} component={"textarea"} placeholder={"Your message..."}/>
         </div>
-        <BaseWrapper contentAlignment={"center"} className={styles.actions}>
+        <div className={styles.actions}>
           <Button type={"submit"}>Submit</Button>
-        </BaseWrapper>
+        </div>
       </Form>
     </Formik>
   );

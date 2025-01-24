@@ -21,7 +21,7 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
     return (
       <Section sectionID={"home"} ref={ref} className={styles.heroSection}>
         <>
-          <div className={styles.contentWrapper}>
+          <div className={[styles.contentWrapper, "sectionInlineWrapper"].join(" ")}>
             <div className={styles.personalInfoWrapper}>
               <p className={styles.title}>Python Developer</p>
               <GlitchText

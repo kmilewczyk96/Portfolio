@@ -42,7 +42,7 @@ export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={[styles.wrapper, "sectionInlineWrapper"].join(" ")}>
       <button className={[styles.chevronBtn, styles.chevronBtnLeft].join(" ")} onClick={handleSpinLeft}>
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#242424" viewBox="0 0 256 256">
           <path

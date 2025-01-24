@@ -24,7 +24,7 @@ const ProjectsDemoSection: ForwardRefExoticComponent<IProps & RefAttributes<HTML
   function ProjectsDemoSection({projects}: IProps, ref: ForwardedRef<HTMLElement>): ReactElement {
     return (
       <Section sectionID={"projects"} ref={ref}>
-        <div className={styles.contentWrapper}>
+        <div className={[styles.contentWrapper, "sectionInlineWrapper"].join(" ")}>
           <GlitchText
             text={"Projects"}
             className={styles.sectionName}

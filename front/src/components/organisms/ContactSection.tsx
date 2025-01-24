@@ -19,7 +19,7 @@ const ContactSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = fo
   function ContactSection({}, ref: ForwardedRef<HTMLElement>): ReactElement {
     return (
       <Section sectionID={"contact"} ref={ref}>
-        <div className={styles.contentWrapper}>
+        <div className={[styles.contentWrapper, "sectionInlineWrapper"].join(" ")}>
           <GlitchText text={"Contact"} className={styles.sectionName} htmlTextTag={htmlTextTags.h3}/>
           <div className={styles.contactWrapper}>
             <ContactCard className={styles.contactCard}/>

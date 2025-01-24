@@ -39,10 +39,7 @@
 
 .actions {
   display: flex;
+  justify-content: center;
   padding-inline: var(--contentPadding);
   margin-bottom: 4.8rem;
-}
-
-.actions > button {
-  margin-inline: auto;
 }

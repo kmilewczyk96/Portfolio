@@ -67,11 +67,9 @@
 .chevronBtnLeft {
   grid-area: buttonLeft;
   justify-self: left;
-  translate: -10rem 0 0;
 }
 
 .chevronBtnRight {
   grid-area: buttonRight;
   justify-self: right;
-  translate: 10rem 0 0;
 }

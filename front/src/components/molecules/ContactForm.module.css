@@ -26,3 +26,8 @@
   background-color: rgba(26, 26, 26, 0.9);
   box-shadow: 0 0 5px 5px #1a1a1a;
 }
+
+.actions {
+  display: flex;
+  justify-content: center;
+}

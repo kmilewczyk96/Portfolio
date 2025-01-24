@@ -38,10 +38,6 @@ html {
   --fxBlue: rgba(116, 192, 252, 0.5);
 }
 
-#root {
-  width: 100%;
-}
-
 body {
 }
 
@@ -97,14 +93,6 @@ input, textarea {
   resize: none;
 }
 
-.snapToStart {
-  scroll-snap-align: start;
-}
-
-.snapToEnd {
-  scroll-snap-align: end;
-}
-
 #snow {
   position: fixed;
   inset: -25%;
@@ -154,4 +142,18 @@ input, textarea {
     100% {
       transform: translate(5em, 0)
     }
+}
+
+/* Utility classes. */
+.sectionInlineWrapper {
+  max-width: min(192rem, 100% - 4.8rem);
+  margin-inline: auto;
+}
+
+.snapToStart {
+  scroll-snap-align: start;
+}
+
+.snapToEnd {
+  scroll-snap-align: end;
 }
