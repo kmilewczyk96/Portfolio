@@ -1,0 +1,7 @@
+.dockerignore
+Dockerfile
+front.Dockerfile
+.gitignore
+
+front/node_modules
+front/build
