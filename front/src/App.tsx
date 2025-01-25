@@ -74,6 +74,16 @@ function App(): ReactElement {
   const refs: RefObject<HTMLElement>[] = [heroRef, projectsRef, contactRef];
   const [activeSectionID, setActiveSectionID] = useState("");
 
+  // FIXME: This is test request. Remove after backend setup.
+  useEffect(() => {
+    async function fetchProjects() {
+      const response = await fetch("/projects");
+      const data = await response.json();
+      console.log(data);
+    }
+    fetchProjects();
+  }, []);
+
   function fn(entries: IntersectionObserverEntry[]): void {
     if (entries.length !== 1) {
       for (let i: number=0; i++; i < entries.length) {

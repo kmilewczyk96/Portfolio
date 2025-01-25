@@ -11,7 +11,13 @@ class TagRoleChoices(str, Enum):
 
 
 class Tag(BaseModel):
-    """Tag model. Object example: id: uuid, name: Python, role: backend."""
-    id: str
+    """Tag model. Object example: name: Python, role: backend."""
     name: str
     role: TagRoleChoices
+
+    @staticmethod
+    def from_doc(item) -> 'Tag':
+        return Tag(
+            name=item['name'],
+            role=item['role'],
+        )
