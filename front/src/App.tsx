@@ -77,9 +77,8 @@ function App(): ReactElement {
   // FIXME: This is test request. Remove after backend setup.
   useEffect(() => {
     async function fetchProjects() {
-      const response = await fetch("/projects");
-      const data = await response.json();
-      console.log(data);
+      const response = await fetch("/api/projects");
+      console.log(await response.json());
     }
     fetchProjects();
   }, []);
