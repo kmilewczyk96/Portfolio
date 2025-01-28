@@ -16,15 +16,15 @@ interface IProps {
 export default function ProjectCard({project, className=undefined}: IProps): ReactElement {
   return (
     <article className={[styles.wrapper, className].join(" ")}>
-      <div className={styles.imageWrapper}>
-        <img src={project.imgSource} alt={`${project.title} project screenshot.`} className={styles.projectImage}/>
-      </div>
+      {/*<div className={styles.imageWrapper}>*/}
+      {/*  <img src={project.imgSource} alt={`${project.title} project screenshot.`} className={styles.projectImage}/>*/}
+      {/*</div>*/}
       <div className={styles.infoWrapper}>
-        <h4 className={styles.projectTitle}>{project.title}</h4>
+        <h4 className={styles.projectTitle}>{project.name}</h4>
         <Marquee
           className={styles.projectTags}
           elementsToDisplay={
-          project.tags.map(tag => <TagPill name={tag.name} type={tag.type}/>)
+          project.tags.map(tag => <TagPill name={tag.name} type={tag.role}/>)
         }/>
         <p className={styles.projectDescription}>{project.description}</p>
         <div className={styles.actions}>

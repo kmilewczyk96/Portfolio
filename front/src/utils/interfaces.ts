@@ -3,10 +3,11 @@ import {projectTagTypes} from "./enums.ts";
 
 export interface IProject {
   id: string,
-  imgSource: string,
-  title: string,
+  name: string,
+  photoURI: string,
   tags: ITags[],
   description: string,
+  sourceCode: string,
 }
 
 export interface ISection {
@@ -16,5 +17,5 @@ export interface ISection {
 
 export interface ITags {
   name: string,
-  type: projectTagTypes
+  role: projectTagTypes
 }

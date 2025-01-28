@@ -25,6 +25,7 @@ async def lifespan(fastapi: FastAPI):
     db = client.get_default_database()
 
     # Check if db is available:
+    # FIXME: Add logic to failed connections.
     response = await db.command(command='ping')
     if int(response['ok']) != 1:
         raise Exception('Error occurred while connecting to MongoDB!')

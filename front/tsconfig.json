@@ -6,10 +6,13 @@
   ],
   "baseURL": "src",
   "compilerOptions": {
+    "baseURL": "src",
     "strict": true,
     "paths": {
-      "@/*": ["./*"],
-      "@assets": ["./assets"],
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
     }
   }
 }
