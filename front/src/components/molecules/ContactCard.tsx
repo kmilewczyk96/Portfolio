@@ -1,6 +1,7 @@
 import styles from "./ContactCard.module.css";
 
 import {ReactElement} from "react";
+
 import SvgLink, {socialIcons} from "../atoms/SvgLink.tsx";
 
 
