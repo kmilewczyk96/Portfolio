@@ -161,6 +161,12 @@ input, textarea {
 }
 
 /* Utility classes. */
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .sectionInlineWrapper {
   max-width: min(192rem, 100% - 4.8rem);
   margin-inline: auto;

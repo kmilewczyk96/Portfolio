@@ -12,10 +12,10 @@ import ProjectsCarousel3D from "./ProjectsCarousel3D.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import ProjectCard from "../molecules/ProjectCard.tsx";
 import Section from "../molecules/Section.tsx";
-import {useFetch} from "../../hooks/useFetch.ts";
-import {htmlTextTags} from "../../utils/enums.ts";
-import {fetchProjects} from "../../utils/httpRequests.ts";
-import {IProject} from "../../utils/interfaces.ts";
+import {useFetch} from "@hooks/useFetch.ts";
+import {htmlTextTags} from "@utils/enums.ts";
+import {fetchProjects} from "@utils/httpRequests.ts";
+import {IProject} from "@utils/interfaces.ts";
 
 
 const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwardRef(
@@ -29,7 +29,12 @@ const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
     } else {
       if (error?.message) {
         // TODO: style error page.
-        content = <div>Error occurred!</div>;
+        content = (
+          <div className={"center"}>
+            <p>{error.message}</p>
+            <p>ERROR</p>
+          </div>
+        );
       } else {
         content = <>
           {fetchedData.length <= 2 ? (
