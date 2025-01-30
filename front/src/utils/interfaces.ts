@@ -31,7 +31,7 @@ export interface ITags {
 }
 
 export interface IURL {
-  path: string,
+  url: string,
   method: httpRequestMethods,
-  extraConfig?: {},
+  config?: RequestInit,
 }

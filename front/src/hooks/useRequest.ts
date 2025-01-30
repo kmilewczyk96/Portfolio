@@ -4,11 +4,15 @@ import {
   useState,
 } from "react";
 
-import {httpRequestMethods} from "@/utils/enums.ts";
-import {IURL} from "@/utils/interfaces.ts";
+import {httpRequestMethods} from "../utils/enums.ts";
+import {IURL} from "../utils/interfaces.ts";
 
 
-const defaultConfig = {}
+const defaultConfig = {
+  method: httpRequestMethods.get,
+  body: null,
+  headers: {},
+}
 export function useRequest(
   {url, method, config=defaultConfig}: IURL)
   : [boolean, null | {message: string}, any[], () => {}] {
@@ -17,7 +21,7 @@ export function useRequest(
   const [fetchedData, setFetchedData] = useState<any>([]);
 
 
-  const sendRequest = useCallback(async function sendRequest(data?: object) {
+  const sendRequest = useCallback(async function sendRequest(data?: BodyInit) {
     // This function will be returned and should only be called from outside unless http method is "GET".
     if (data) {
       config.body = data;

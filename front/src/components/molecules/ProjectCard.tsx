@@ -8,7 +8,7 @@ import TagPill from "../atoms/TagPill.tsx";
 import {
   IProject,
   ITags
-} from "@utils/interfaces";
+} from "../../utils/interfaces";
 
 
 interface IProps {
@@ -20,7 +20,7 @@ export default function ProjectCard({project, className=undefined}: IProps): Rea
   return (
     <article className={[styles.wrapper, className].join(" ")}>
       <div className={styles.imageWrapper}>
-        <img src={project.photoURI} alt={`${project.title} project screenshot.`} className={styles.projectImage}/>
+        <img src={project.photoURI} alt={`${project.name} project screenshot.`} className={styles.projectImage}/>
       </div>
       <div className={styles.infoWrapper}>
         <h4 className={styles.projectTitle}>{project.name}</h4>

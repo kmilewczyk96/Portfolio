@@ -12,9 +12,9 @@ import ProjectsCarousel3D from "./ProjectsCarousel3D.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import ProjectCard from "../molecules/ProjectCard.tsx";
 import Section from "../molecules/Section.tsx";
-import {useRequest} from "@/hooks/useRequest.ts";
-import {htmlTextTags, httpRequestMethods} from "@/utils/enums.ts";
-import {IProject} from "@/utils/interfaces.ts";
+import {useRequest} from "../../hooks/useRequest.ts";
+import {htmlTextTags, httpRequestMethods} from "../../utils/enums.ts";
+import {IProject} from "../../utils/interfaces.ts";
 
 
 const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwardRef(
