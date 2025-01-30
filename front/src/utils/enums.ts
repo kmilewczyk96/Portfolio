@@ -9,6 +9,11 @@ export enum htmlTextTags {
   span,
 }
 
+export enum httpRequestMethods {
+  get = "GET",
+  post = "POST",
+}
+
 export enum projectTagTypes {
   backend = "backend",
   frontend = "frontend",

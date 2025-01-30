@@ -38,7 +38,9 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
         message: ""
       }}
       validationSchema={MessageSchema}
-      onSubmit={() => {console.log("validated!")}}
+      onSubmit={(values) => {
+        console.log(values);
+      }}
     >
       <Form className={[styles.wrapper, className].join(" ")}>
         <div className={styles.fieldsWrapper}>

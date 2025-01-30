@@ -1,5 +1,15 @@
-import {projectTagTypes} from "./enums.ts";
+import {
+  httpRequestMethods,
+  projectTagTypes
+} from "./enums.ts";
 
+
+export interface IMessage {
+  name: string,
+  email: string,
+  company: string,
+  message: string,
+}
 
 export interface IProject {
   id: string,
@@ -18,4 +28,10 @@ export interface ISection {
 export interface ITags {
   name: string,
   role: projectTagTypes
+}
+
+export interface IURL {
+  path: string,
+  method: httpRequestMethods,
+  extraConfig?: {},
 }

@@ -5,7 +5,10 @@ import {ReactElement} from "react";
 import Button from "../atoms/Button.tsx";
 import Marquee from "../atoms/Marquee.tsx";
 import TagPill from "../atoms/TagPill.tsx";
-import {IProject} from "@utils/interfaces";
+import {
+  IProject,
+  ITags
+} from "@utils/interfaces";
 
 
 interface IProps {
@@ -24,7 +27,7 @@ export default function ProjectCard({project, className=undefined}: IProps): Rea
         <Marquee
           className={styles.projectTags}
           elementsToDisplay={
-          project.tags.map(tag => <TagPill name={tag.name} type={tag.role}/>)
+          project.tags.map((tag: ITags): ReactElement => <TagPill name={tag.name} type={tag.role}/>)
         }/>
         <p className={styles.projectDescription}>{project.description}</p>
         <div className={styles.actions}>

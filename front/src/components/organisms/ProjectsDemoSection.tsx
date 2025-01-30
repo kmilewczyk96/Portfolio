@@ -2,25 +2,27 @@ import styles from "./ProjectsDemoSection.module.css";
 
 import {
   ForwardedRef,
+  forwardRef,
   ForwardRefExoticComponent,
   ReactElement,
   RefAttributes,
-  forwardRef,
 } from "react";
 
 import ProjectsCarousel3D from "./ProjectsCarousel3D.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import ProjectCard from "../molecules/ProjectCard.tsx";
 import Section from "../molecules/Section.tsx";
-import {useFetch} from "@hooks/useFetch.ts";
-import {htmlTextTags} from "@utils/enums.ts";
-import {fetchProjects} from "@utils/httpRequests.ts";
-import {IProject} from "@utils/interfaces.ts";
+import {useRequest} from "@/hooks/useRequest.ts";
+import {htmlTextTags, httpRequestMethods} from "@/utils/enums.ts";
+import {IProject} from "@/utils/interfaces.ts";
 
 
 const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwardRef(
   function ProjectsDemoSection({}, ref: ForwardedRef<HTMLElement>): ReactElement {
-    const [isFetching, error, fetchedData] = useFetch(fetchProjects);
+    const [isFetching, error, fetchedData, _] = useRequest({
+      url: "/api/projects",
+      method: httpRequestMethods.get,
+    });
 
     let content: ReactElement;
     if (isFetching) {
@@ -32,7 +34,6 @@ const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
         content = (
           <div className={"center"}>
             <p>{error.message}</p>
-            <p>ERROR</p>
           </div>
         );
       } else {

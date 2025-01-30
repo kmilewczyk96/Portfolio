@@ -3,7 +3,7 @@ import styles from "./ProjectsCarousel3D.module.css";
 import {ReactElement, useState} from "react";
 
 import ProjectCard from "../molecules/ProjectCard.tsx";
-import {IProject} from "../../utils/interfaces.ts";
+import {IProject} from "@/utils/interfaces.ts";
 
 
 interface IProps {

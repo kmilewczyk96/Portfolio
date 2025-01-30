@@ -4,7 +4,7 @@ import ContactSection from "./components/organisms/ContactSection.tsx";
 import HeroSection from "./components/organisms/HeroSection.tsx";
 import MainNavbar from "./components/organisms/MainNavbar.tsx";
 import ProjectsDemoSection from "./components/organisms/ProjectsDemoSection.tsx";
-import {ISection} from "./utils/interfaces.ts";
+import {ISection} from "@/utils/interfaces";
 
 
 const sections: ISection[] = [
@@ -21,7 +21,7 @@ function App(): ReactElement {
   const refs: RefObject<HTMLElement>[] = [heroRef, projectsRef, contactRef];
   const [activeSectionID, setActiveSectionID] = useState("");
 
-  function fn(entries: IntersectionObserverEntry[]): void {
+  function intersectionAction(entries: IntersectionObserverEntry[]): void {
     if (entries.length !== 1) {
       for (let i: number=0; i++; i < entries.length) {
         entries[i].isIntersecting && setActiveSectionID(entries[i].target.id);
@@ -48,7 +48,7 @@ function App(): ReactElement {
   }
 
   useEffect((): () => void => {
-    const observer = new IntersectionObserver(fn, options);
+    const observer = new IntersectionObserver(intersectionAction, options);
     refs.forEach(
       ref => observer.observe(ref.current!)
     );
