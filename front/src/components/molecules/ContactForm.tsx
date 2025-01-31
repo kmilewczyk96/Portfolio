@@ -2,23 +2,22 @@ import styles from "./ContactForm.module.css";
 
 import {ReactElement} from "react";
 
-import {
-  Form,
-  Formik
-} from "formik";
+import {Form, Formik} from "formik";
 
 import * as Yup from 'yup';
 
 import Button from "../atoms/Button.tsx";
 import FormField from "../atoms/FormField.tsx";
-import {ObjectSchema} from "yup";
+import {useRequest} from "../../hooks/useRequest.ts";
+import {httpRequestMethods} from "../../utils/enums.ts";
+import {IMessage} from "../../utils/interfaces.ts";
 
 
 interface IProps {
   className?: string | undefined,
 }
 
-const MessageSchema: ObjectSchema<object> = Yup.object().shape({
+const MessageSchema: Yup.ObjectSchema<object> = Yup.object().shape({
   name: Yup.string()
     .required("This field is required!"),
   email: Yup.string()
@@ -28,7 +27,18 @@ const MessageSchema: ObjectSchema<object> = Yup.object().shape({
     .required("This field is required!")
 });
 
+const config = {
+  headers: {
+    "Content-Type": "application/json",
+  }
+};
 export default function ContactForm({className = undefined}: IProps): ReactElement {
+  const [isFetching, error, fetchedData, sendRequest] = useRequest({
+    url: "/api/messages",
+    method: httpRequestMethods.post,
+    config: config,
+  });
+
   return (
     <Formik
       initialValues={{
@@ -38,8 +48,9 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
         message: ""
       }}
       validationSchema={MessageSchema}
-      onSubmit={(values) => {
-        console.log(values);
+      onSubmit={(values: IMessage): void => {
+        const formData: string = JSON.stringify(values);
+        sendRequest(formData);
       }}
     >
       <Form className={[styles.wrapper, className].join(" ")}>

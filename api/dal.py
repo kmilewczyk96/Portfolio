@@ -5,6 +5,22 @@ from pydantic import BaseModel
 
 
 # Pydantic models:
+class Message(BaseModel):
+    """Message model."""
+    name: str
+    email: str
+    company: str | None
+    message: str
+
+    @staticmethod
+    def from_doc(item) -> 'Message':
+        return Message(
+            name = item['name'],
+            email = item['email'],
+            company = item['company'],
+            message = item['message'],
+        )
+
 class TagRoleChoices(str, Enum):
     """Tag role choices. Frontend will need these values to determine 'tag pill' background color."""
     backend = 'backend'
@@ -47,6 +63,25 @@ class Project(BaseModel):
 
 
 # Data Access Layers:
+class MessageDAL:
+    """Handles communication between Application and Mongo Database."""
+    def __init__(self, message_collection: AsyncIOMotorCollection):
+        self._message_collection = message_collection
+
+    async def create_message(self, message: Message, session=None) -> str:
+        res = await self._message_collection.insert_one(
+            {
+                'name': message.name,
+                'email': message.email,
+                'company': message.company,
+                'message': message.message,
+            },
+            session=session
+        )
+
+        return str(res.inserted_id)
+
+
 class TagDAL:
     """Handles communication between Application and Mongo Database."""
     def __init__(self, tag_collection: AsyncIOMotorCollection):

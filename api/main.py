@@ -1,11 +1,16 @@
 from contextlib import asynccontextmanager
 import os
 
-from fastapi import FastAPI
+from fastapi import (
+    FastAPI,
+    status,
+)
 from motor.motor_asyncio import AsyncIOMotorClient
 import uvicorn
 
 from dal import (
+    Message,
+    MessageDAL,
     Project,
     ProjectDAL,
     Tag,
@@ -14,6 +19,7 @@ from dal import (
 
 
 MONGODB_URI = os.environ.get('MONGODB_URI')
+MESSAGE_COLLECTION = 'messages'
 PROJECT_COLLECTION = 'projects'
 TAG_COLLECTION = 'tags'
 
@@ -31,6 +37,9 @@ async def lifespan(fastapi: FastAPI):
         raise Exception('Error occurred while connecting to MongoDB!')
 
     # Add default collection(s):
+    messages = db.get_collection(MESSAGE_COLLECTION)
+    app.message_dal = MessageDAL(message_collection=messages)
+
     projects = db.get_collection(PROJECT_COLLECTION)
     app.project_dal = ProjectDAL(project_collection=projects)
 
@@ -48,7 +57,12 @@ app = FastAPI(lifespan=lifespan, debug=True)
 
 
 # API Endpoints:
-@app.get('/projects')
+@app.post(path='/messages', status_code=status.HTTP_201_CREATED)
+async def create_new_message(message: Message) -> str:
+    """Creates and returns new Message."""
+    return await app.message_dal.create_message(message=message)
+
+@app.get(path='/projects')
 async def get_all_projects() -> list[Project]:
     """Returns all Projects."""
     tags = await get_all_tags()
@@ -64,7 +78,7 @@ async def get_all_projects() -> list[Project]:
 
     return projects
 
-@app.get('/tags')
+@app.get(path='/tags')
 async def get_all_tags() -> list[Tag]:
     """Returns all Tags."""
     return [i async for i in app.tag_dal.list_tags()]

@@ -112,7 +112,7 @@ input, textarea {
 #snow {
   position: fixed;
   inset: -25%;
-  background: transparent url("assets/noise-transparent.png") repeat 0 0;
+  /*background: transparent url("assets/noise-transparent.png") repeat 0 0;*/
   opacity: 1;
   /*animation: glitchAnimation 0.5s infinite;*/
   /*filter: brightness(120%);*/

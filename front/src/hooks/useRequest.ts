@@ -15,7 +15,7 @@ const defaultConfig = {
 }
 export function useRequest(
   {url, method, config=defaultConfig}: IURL)
-  : [boolean, null | {message: string}, any[], () => {}] {
+  : [boolean, null | {message: string}, any[], (formData: string) => {}] {
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [error, setError] = useState<null | {message: string}>(null);
   const [fetchedData, setFetchedData] = useState<any>([]);
