@@ -4,7 +4,7 @@ import ContactSection from "./components/organisms/ContactSection.tsx";
 import HeroSection from "./components/organisms/HeroSection.tsx";
 import MainNavbar from "./components/organisms/MainNavbar.tsx";
 import ProjectsDemoSection from "./components/organisms/ProjectsDemoSection.tsx";
-import {ISection} from "@/utils/interfaces";
+import {ISection} from "./utils/interfaces";
 
 
 const sections: ISection[] = [
@@ -23,7 +23,7 @@ function App(): ReactElement {
 
   function intersectionAction(entries: IntersectionObserverEntry[]): void {
     if (entries.length !== 1) {
-      for (let i: number=0; i++; i < entries.length) {
+      for (let i: number=0; i < entries.length; i++) {
         entries[i].isIntersecting && setActiveSectionID(entries[i].target.id);
       }
       return;
