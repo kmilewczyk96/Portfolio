@@ -3,7 +3,7 @@ services:
   nginx:
     image: nginx:1.27
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/dev/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - "8000:80"
     depends_on:
@@ -24,10 +24,13 @@ services:
   api:
     build:
       context: .
+      dockerfile: api.Dockerfile
     ports:
       - "3001:3001"
     volumes:
       - ./api:/api
     command: ["python", "main.py"]
+    environment:
+      - DEBUG=1
     env_file:
-      - .env
+      - .env.sample

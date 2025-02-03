@@ -1,4 +1,3 @@
-# FIXME: add permisions for non-root user!
 FROM node:20-alpine3.21
 LABEL maintainer="kmilewczyk"
 

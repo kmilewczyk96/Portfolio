@@ -33,6 +33,9 @@ const config = {
   }
 };
 export default function ContactForm({className = undefined}: IProps): ReactElement {
+  // TODO: style form when it's being sent.
+
+  // @ts-ignore
   const [isFetching, error, fetchedData, sendRequest] = useRequest({
     url: "/api/messages",
     method: httpRequestMethods.post,

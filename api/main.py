@@ -18,6 +18,7 @@ from dal import (
 )
 
 
+DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 MONGODB_URI = os.environ.get('MONGODB_URI')
 MESSAGE_COLLECTION = 'messages'
 PROJECT_COLLECTION = 'projects'
@@ -53,7 +54,7 @@ async def lifespan(fastapi: FastAPI):
     client.close()
 
 
-app = FastAPI(lifespan=lifespan, debug=True)
+app = FastAPI(lifespan=lifespan, debug=DEBUG)
 
 
 # API Endpoints:

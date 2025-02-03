@@ -1,0 +1,22 @@
+name: Portfolio
+services:
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    restart: always
+    ports:
+      - "3001:3001"
+    command: ["python", "main.py"]
+    env_file:
+      - .env

@@ -1,7 +1,15 @@
-.dockerignore
-Dockerfile
-front.Dockerfile
 .gitignore
+
+Dockerfile
+.dockerignore
+api.Dockerfile
+client.Dockerfile
+docker-compose.yml
+docker-compose-deploy.yml
+front.Dockerfile
+
+.env
 
 front/node_modules
 front/build
+front/dist
