@@ -5,6 +5,7 @@ from fastapi import (
     FastAPI,
     status,
 )
+from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import uvicorn
 
@@ -18,12 +19,17 @@ from dal import (
 )
 
 
-DEBUG = bool(int(os.environ.get('DEBUG', 0)))
-MONGODB_URI = os.environ.get('MONGODB_URI')
-PORT = int(os.environ.get('PORT', 3001))
 MESSAGE_COLLECTION = 'messages'
 PROJECT_COLLECTION = 'projects'
 TAG_COLLECTION = 'tags'
+
+# Thanks to nginx there won't be any CORS issues in this project demo, this line is dedicated for production env,
+# where setup looks a bit different due to the Render Cloud Service structure.
+ORIGINS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+
+DEBUG = bool(int(os.environ.get('DEBUG', 0)))
+HOST = int(os.environ.get('PORT', 3001))
+MONGODB_URI = os.environ.get('MONGODB_URI')
 
 
 @asynccontextmanager
@@ -57,6 +63,12 @@ async def lifespan(fastapi: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan, debug=DEBUG)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ORIGINS,
+    allow_methods=['GET', 'POST'],
+    allow_headers=['Content-Type'],
+)
 
 
 # API Endpoints:
