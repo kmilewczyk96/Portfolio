@@ -28,7 +28,7 @@ TAG_COLLECTION = 'tags'
 ORIGINS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
-HOST = int(os.environ.get('PORT', 3001))
+PORT = int(os.environ.get('PORT', 3001))
 MONGODB_URI = os.environ.get('MONGODB_URI')
 
 
@@ -105,7 +105,7 @@ async def get_all_tags() -> list[Tag]:
 def main():
     """This function should be run by Docker Compose inside API service."""
     try:
-        uvicorn.run('main:app', host='0.0.0.0', port=PORT, reload=False)
+        uvicorn.run('main:app', host='0.0.0.0', port=PORT, reload=DEBUG)
     except KeyboardInterrupt:
         pass
 
