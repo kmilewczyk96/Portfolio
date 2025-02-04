@@ -20,7 +20,7 @@ import {IProject} from "../../utils/interfaces.ts";
 const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwardRef(
   function ProjectsDemoSection({}, ref: ForwardedRef<HTMLElement>): ReactElement {
     const [isFetching, error, fetchedData, _] = useRequest({
-      url: "/api/projects",
+      url: (import.meta.env.VITE_API_URL || "/api") + "/projects",
       method: httpRequestMethods.get,
     });
 

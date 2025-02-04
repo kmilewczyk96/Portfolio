@@ -37,7 +37,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
 
   // @ts-ignore
   const [isFetching, error, fetchedData, sendRequest] = useRequest({
-    url: "/api/messages",
+    url: (import.meta.env.VITE_API_URL || "/api") + "/messages",
     method: httpRequestMethods.post,
     config: config,
   });
