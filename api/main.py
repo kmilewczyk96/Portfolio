@@ -20,9 +20,11 @@ from dal import (
 
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 MONGODB_URI = os.environ.get('MONGODB_URI')
+PORT = int(os.environ.get('PORT', 3001))
 MESSAGE_COLLECTION = 'messages'
 PROJECT_COLLECTION = 'projects'
 TAG_COLLECTION = 'tags'
+
 
 @asynccontextmanager
 async def lifespan(fastapi: FastAPI):
@@ -63,6 +65,7 @@ async def create_new_message(message: Message) -> str:
     """Creates and returns new Message."""
     return await app.message_dal.create_message(message=message)
 
+
 @app.get(path='/projects')
 async def get_all_projects() -> list[Project]:
     """Returns all Projects."""
@@ -79,6 +82,7 @@ async def get_all_projects() -> list[Project]:
 
     return projects
 
+
 @app.get(path='/tags')
 async def get_all_tags() -> list[Tag]:
     """Returns all Tags."""
@@ -89,7 +93,7 @@ async def get_all_tags() -> list[Tag]:
 def main():
     """This function should be run by Docker Compose inside API service."""
     try:
-        uvicorn.run('main:app', host='0.0.0.0', port=3001, reload=True)
+        uvicorn.run('main:app', host='0.0.0.0', port=PORT, reload=False)
     except KeyboardInterrupt:
         pass
 
