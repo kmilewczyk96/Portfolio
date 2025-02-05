@@ -18,6 +18,10 @@ import {htmlTextTags} from "../../utils/enums.ts";
 
 const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwardRef(
   function HeroSection({}, ref: ForwardedRef<HTMLElement>): ReactElement {
+    function handleClick(): void {
+      document.getElementById('projects')!.scrollIntoView();
+    }
+
     return (
       <Section sectionID={"home"} ref={ref} className={styles.heroSection}>
         <>
@@ -36,7 +40,7 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
                 Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
                 Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
               </p>
-              <Button onClick={() => {}}>Learn More</Button>
+              <Button onClick={handleClick}>Learn More</Button>
             </div>
             <div className={styles.photoWrapper}>
               <GlitchImage
