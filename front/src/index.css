@@ -15,8 +15,11 @@
 
 html {
   font-size: 62.5%;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+
+  @media (hover: hover) {
+    scroll-snap-type: y mandatory;
+  }
 }
 
 :root {
@@ -39,6 +42,7 @@ html {
 }
 
 body {
+  min-width: 35rem;
 }
 
 ::-webkit-scrollbar {
@@ -113,6 +117,10 @@ input, textarea {
   position: fixed;
   inset: 0;
   box-shadow: 0 0 10vw rgba(0, 0, 0, 0.9) inset;
+
+  @media screen and (max-aspect-ratio: 4/3) {
+    display: none;
+  }
 }
 
 /* Utility classes. */
@@ -123,7 +131,7 @@ input, textarea {
 }
 
 .sectionInlineWrapper {
-  max-width: min(192rem, 100% - 4.8rem);
+  max-width: min(192rem, 100%);
   margin-inline: auto;
 }
 
