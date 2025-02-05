@@ -12,7 +12,7 @@ import Button from "../atoms/Button.tsx";
 import GlitchImage from "../atoms/GlitchImage.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import Section from "../molecules/Section.tsx";
-import myPhoto from "../../assets/myPhotoB&W.png";
+import myPhoto from "../../assets/myPhoto.webp";
 import {htmlTextTags} from "../../utils/enums.ts";
 
 
@@ -35,10 +35,11 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
                 animationDelaySeconds={3}
               />
               <p className={styles.description}>
-                Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
-                Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
-                Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
-                Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
+                Hi! I am a Software Developer proficient with Python and TypeScript.<br/>
+                I have experience with libraries such as Django, DRF, FastAPI, PyQt and React.
+                I'm strongly focused on applying best practices, writing clean and maintainable code.
+                I'm always eager to broaden my skills (both technical and soft).<br/>
+                I hope you enjoy browsing my website and consider filling contact form attached at the very end of the page.
               </p>
               <Button onClick={handleClick}>Learn More</Button>
             </div>
