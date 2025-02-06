@@ -13,7 +13,7 @@ interface IProps {
 
 export default function MainNavbar({sections, activeSectionID}: IProps): ReactElement {
   return (
-    <div className={
+    <nav className={
       [styles.mainNavbar, activeSectionID === "home" ? styles.hidden : undefined].join(" ")
     }>
       <li className={styles.linkWrapper}>
@@ -25,6 +25,6 @@ export default function MainNavbar({sections, activeSectionID}: IProps): ReactEl
           >{section.label}</DynamicLink>
         )}
       </li>
-    </div>
+    </nav>
   );
 };
