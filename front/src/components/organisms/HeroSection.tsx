@@ -41,7 +41,7 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
                 I'm always eager to broaden my skills (both technical and soft).<br/>
                 I hope you enjoy browsing my website and consider filling contact form attached at the very end of the page.
               </p>
-              <Button onClick={handleClick}>Learn More</Button>
+              <Button className={styles.cta} onClick={handleClick}>Learn More</Button>
             </div>
             <div className={styles.photoWrapper}>
               <GlitchImage

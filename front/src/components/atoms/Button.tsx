@@ -7,7 +7,7 @@ import {
 
 
 interface IProps extends ComponentPropsWithoutRef<"button">{
-  className?: "string",
+  className?: string,
   children: ReactElement | string,
 }
 
