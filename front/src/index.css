@@ -78,7 +78,7 @@ a:visited {
 section {
   /* Code duplication because not all browsers support svh unit yet.*/
   min-height: 100vh;
-  min-height: 100svh;
+  /*min-height: 100svh;*/
   color: #c3bcc2;
 }
 

@@ -1,6 +1,4 @@
 .mainNavbar {
-  position: sticky;
-  top: 0;
   z-index: 99;
   background-color: rgba(26, 26, 26, 0.1);
   backdrop-filter: blur(3px);
@@ -19,4 +17,20 @@
 
 .hidden {
   opacity: 0;
+}
+
+@media (hover: hover) {
+  .mainNavbar {
+    position: sticky;
+    top: 0;
+  }
+}
+
+@media (hover: none) {
+  .mainNavbar {
+    position: fixed!important;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
 }
