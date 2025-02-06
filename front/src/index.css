@@ -119,7 +119,7 @@ input, textarea {
   box-shadow: 0 0 10vw rgba(0, 0, 0, 0.9) inset;
 
   @media screen and (max-aspect-ratio: 4/3) {
-    display: none;
+    opacity: 0;
   }
 }
 
