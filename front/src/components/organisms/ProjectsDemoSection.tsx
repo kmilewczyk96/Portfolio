@@ -41,7 +41,7 @@ const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
           {fetchedData.length <= 2 ? (
             <ul className={styles.projectsShowcase}>
               {fetchedData.map((project: IProject): ReactElement => (
-                <ProjectCard key={project.id} project={project}/>
+                <ProjectCard key={project.id} isActive={true} project={project}/>
               ))}
             </ul>
           ) : (

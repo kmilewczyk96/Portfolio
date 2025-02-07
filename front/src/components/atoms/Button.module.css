@@ -18,27 +18,29 @@
 .buttonDefault::after {
   content: "";
   position: absolute;
-  inset: -0.4rem;
+  inset: -0.25em;
   background-color: #c3bcc2;
   border-radius: inherit;
   z-index: -1;
 }
 
 @media (hover: hover) {
-  .buttonDefault:hover {
-    color: hsl(from var(--fxGreen) h s l / 1);
-    &::before,
-    &::after {
-      opacity: 1;
+  .buttonDefault:not(:disabled) {
+    &.buttonDefault:hover {
+      color: hsl(from var(--fxGreen) h s l / 1);
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+      &::after {
+        filter: blur(9px);
+        background-color: hsl(from var(--fxGreen) h s l / 1);
+      }
     }
-    &::after {
-      filter: blur(9px);
-      background-color: hsl(from var(--fxGreen) h s l / 1);
-    }
-  }
-  .buttonDefault:active {
-    &::after {
-      filter: blur(3px);
+    &.buttonDefault:active {
+      &::after {
+        filter: blur(3px);
+      }
     }
   }
 }
