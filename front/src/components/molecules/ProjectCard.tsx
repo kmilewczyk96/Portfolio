@@ -13,10 +13,11 @@ import {
 
 interface IProps {
   project: IProject,
+  isActive: boolean,
   className?: string | undefined,
 }
 
-export default function ProjectCard({project, className=undefined}: IProps): ReactElement {
+export default function ProjectCard({project, isActive=false, className=undefined}: IProps): ReactElement {
   return (
     <article className={[styles.wrapper, className].join(" ")}>
       <div className={styles.imageWrapper}>
@@ -31,7 +32,7 @@ export default function ProjectCard({project, className=undefined}: IProps): Rea
         }/>
         <p className={styles.projectDescription}>{project.description}</p>
         <div className={styles.actions}>
-          <a href={project.sourceCode}><Button>Source Code</Button></a>
+          <Button disabled={!isActive}>Source Code</Button>
         </div>
       </div>
     </article>

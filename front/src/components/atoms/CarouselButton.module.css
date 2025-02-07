@@ -1,0 +1,23 @@
+.carouselBtn {
+  z-index: 2;
+  aspect-ratio: 1;
+  color: #1a1a1a;
+  background-color: #c3bcc2;
+  border-radius: 5px;
+  transition: box-shadow 0.5s;
+  padding: 0.6rem;
+
+  &:hover:not(&:active) {
+    box-shadow: 0 0 15px 2px #c3bcc2;
+  }
+}
+
+.left {
+  grid-area: buttonLeft;
+  justify-self: left;
+}
+
+.right {
+  grid-area: buttonRight;
+  justify-self: right;
+}

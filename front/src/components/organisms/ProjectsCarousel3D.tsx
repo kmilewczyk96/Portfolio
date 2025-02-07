@@ -2,6 +2,7 @@ import styles from "./ProjectsCarousel3D.module.css";
 
 import {ReactElement, useState} from "react";
 
+import CarouselButton, {direction} from "../atoms/CarouselButton.tsx";
 import ProjectCard from "../molecules/ProjectCard.tsx";
 import {IProject} from "../../utils/interfaces.ts";
 
@@ -19,7 +20,6 @@ enum classes {
 }
 
 export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
-  // TODO: disable all cards except active one!
   const carouselItems: IProject[] = projects.length >= 5 ? projects : (
     projects.concat(projects.map((project) => {
       return {...project, id: "alt" + project.id}
@@ -28,7 +28,7 @@ export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
 
   const [currentIndex, setCurrentIndex] = useState(1)
 
-  function handleSpinRight() {
+  function handleSpinRight(): void {
     setCurrentIndex((prevState): number => {
       if (prevState === 0) {
         return carouselItems.length - 1;
@@ -37,31 +37,26 @@ export default function ProjectsCarousel3D({projects}: IProps): ReactElement {
     })
   }
 
-  function handleSpinLeft() {
+  function handleSpinLeft(): void {
     setCurrentIndex((prevState): number => (prevState + 1) % carouselItems.length);
   }
 
   return (
     <div className={[styles.wrapper, "sectionInlineWrapper"].join(" ")}>
-      <button className={[styles.chevronBtn, styles.chevronBtnLeft].join(" ")} onClick={handleSpinLeft}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#242424" viewBox="0 0 256 256">
-          <path
-            d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/>
-        </svg>
-      </button>
+      <CarouselButton buttonFn={handleSpinLeft} direction={direction.left}/>
       <ul className={styles.carouselElements}>
         {carouselItems.map((project, index) => (
-          <ProjectCard key={project.id} project={project} className={
-            [styles.carouselCard, styles[classes[(index + currentIndex) % carouselItems.length]]].join(" ")
-          }/>
+          <ProjectCard
+            key={project.id}
+            project={project}
+            isActive={(index + currentIndex) % carouselItems.length === classes.active}
+            className={
+              [styles.carouselCard, styles[classes[(index + currentIndex) % carouselItems.length]]].join(" ")
+            }
+          />
         ))}
       </ul>
-      <button className={[styles.chevronBtn, styles.chevronBtnRight].join(" ")} onClick={handleSpinRight}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#242424" viewBox="0 0 256 256">
-          <path
-            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/>
-        </svg>
-      </button>
+      <CarouselButton buttonFn={handleSpinRight} direction={direction.right}/>
     </div>
   );
 }

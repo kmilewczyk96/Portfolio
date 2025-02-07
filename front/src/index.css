@@ -64,8 +64,10 @@ body {
 button {
   border: unset;
   background-color: unset;
-  cursor: pointer;
   font-family: inherit;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 a,
