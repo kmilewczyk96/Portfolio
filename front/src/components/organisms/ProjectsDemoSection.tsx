@@ -1,15 +1,10 @@
 import styles from "./ProjectsDemoSection.module.css";
 
-import {
-  ForwardedRef,
-  forwardRef,
-  ForwardRefExoticComponent,
-  ReactElement,
-  RefAttributes,
-} from "react";
+import {ForwardedRef, forwardRef, ForwardRefExoticComponent, ReactElement, RefAttributes,} from "react";
 
 import ProjectsCarousel3D from "./ProjectsCarousel3D.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
+import Spinner from "../atoms/Spinner.tsx";
 import ProjectCard from "../molecules/ProjectCard.tsx";
 import Section from "../molecules/Section.tsx";
 import {useRequest} from "../../hooks/useRequest.ts";
@@ -26,8 +21,17 @@ const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
 
     let content: ReactElement;
     if (isFetching) {
-      // TODO: Project spinner.
-      content = <div>Loading...</div>;
+      content = (
+        <div className={"center"}>
+          <GlitchText
+            text={"Loading"}
+            className={[styles.message, styles.loading].join(" ")}
+            htmlTextTag={htmlTextTags.p}
+            animationDelaySeconds={2}
+          />
+          <Spinner/>
+        </div>
+      );
     } else {
       if (error?.message) {
         // TODO: style error page.
