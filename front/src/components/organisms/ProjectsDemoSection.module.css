@@ -8,11 +8,15 @@
 }
 
 .message {
-  font-size: 4.8rem;
+  font-size: 3rem;
 }
 
 .loading {
   margin-bottom: 2.4rem;
+}
+
+.error {
+  color: hsl(from var(--fxRed) h s l / 1);
 }
 
 .projectsShowcase {
