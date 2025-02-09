@@ -34,10 +34,9 @@ const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
       );
     } else {
       if (error?.message) {
-        // TODO: style error page.
         content = (
           <div className={"center"}>
-            <p>{error.message}</p>
+            <p className={[styles.message, styles.error].join(" ")}>Something went wrong while fetching projects!</p>
           </div>
         );
       } else {
