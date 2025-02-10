@@ -6,13 +6,14 @@ import {
 } from "react";
 
 
-interface IProps extends ComponentPropsWithoutRef<"button">{
+interface IProps extends ComponentPropsWithoutRef<"button"> {
+  goTo?: string,
   className?: string,
   children: ReactElement | string,
 }
 
-export default function Button({className, children, ...props}: IProps): ReactElement {
-  return (
+export default function Button({goTo, className, children, ...props}: IProps): ReactElement {
+  const button: ReactElement = (
     <button
       className={[styles.buttonDefault, className].join(" ")}
       {...props}
@@ -20,4 +21,14 @@ export default function Button({className, children, ...props}: IProps): ReactEl
       {children}
     </button>
   );
+
+  if (goTo && !props.disabled) {
+    return (
+      <a href={goTo} rel={"noopener noreferrer"} target={"_blank"}>
+        {button}
+      </a>
+    );
+  }
+
+  return button;
 }
