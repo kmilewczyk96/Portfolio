@@ -17,7 +17,7 @@ export interface IProject {
   photoURI: string,
   tags: ITags[],
   description: string,
-  sourceCode: string,
+  source_code: string,
 }
 
 export interface ISection {
