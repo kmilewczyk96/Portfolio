@@ -1,6 +1,6 @@
 import styles from "./ProjectCard.module.css";
 
-import {ReactElement} from "react";
+import {ReactElement, SyntheticEvent} from "react";
 
 import Button from "../atoms/Button.tsx";
 import Marquee from "../atoms/Marquee.tsx";
@@ -18,10 +18,21 @@ interface IProps {
 }
 
 export default function ProjectCard({project, isActive=false, className=undefined}: IProps): ReactElement {
+  const fallbackImg: string = "./src/assets/fallback.jpg";
+
+  function handleImgError(e: SyntheticEvent<HTMLImageElement, Event>): void {
+    e.currentTarget.src = fallbackImg;
+  }
+
   return (
     <article className={[styles.wrapper, className].join(" ")}>
       <div className={styles.imageWrapper}>
-        <img src={project.photoURI} alt={`${project.name} project screenshot.`} className={styles.projectImage}/>
+        <img
+          src={project.photoURI}
+          onError={handleImgError}
+          alt={`${project.name} project screenshot.`}
+          className={styles.projectImage}
+        />
       </div>
       <div className={styles.infoWrapper}>
         <h4 className={styles.projectTitle}>{project.name}</h4>
