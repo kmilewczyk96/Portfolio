@@ -4,7 +4,7 @@
 
 .sectionName {
   font-size: 7.2rem;
-  margin-bottom: 9.6rem;
+  margin-bottom: 1em;
 }
 
 .message {
@@ -32,4 +32,42 @@
 
 .actions {
   margin-bottom: auto;
+}
+
+@media screen and (max-width: 120rem) {
+  .contentWrapper {
+    max-width: 160rem;
+  }
+
+  .sectionName {
+    font-size: 6.4rem;
+  }
+}
+
+@media screen and (max-width: 100rem) {
+  .contentWrapper {
+    max-width: 136.6rem;
+  }
+
+  .sectionName {
+    font-size: 5.2rem;
+  }
+}
+
+@media screen and (max-width: 86rem) {
+  .contentWrapper {
+    max-width: 102.4rem;
+  }
+
+  .sectionName {
+    font-size: 4.4rem;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+
+}
+
+@media screen and (max-aspect-ratio: 4/3) {
+
 }

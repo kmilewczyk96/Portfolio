@@ -1,3 +1,21 @@
 .wrapper:not(#home) {
   padding-block: 9.6rem;
 }
+
+@media screen and (max-width: 120rem) {
+  .wrapper:not(#home) {
+    padding-block: 8rem;
+  }
+}
+
+@media screen and (max-width: 100rem) {
+  .wrapper:not(#home) {
+    padding-block: 6.4rem;
+  }
+}
+
+@media screen and (max-width: 86rem) {
+  .wrapper:not(#home) {
+    padding-block: 6.4rem;
+  }
+}
