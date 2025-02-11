@@ -25,3 +25,21 @@
   border: 1px solid rgba(116, 192, 252, 0.5);
   box-shadow: 0 0 5px rgba(116, 192, 252, 0.8);
 }
+
+@media screen and (max-width: 120rem) {
+  .wrapper {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 100rem) {
+  .wrapper {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 86rem) {
+  .wrapper {
+    font-size: 1.2rem;
+  }
+}

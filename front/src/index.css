@@ -145,3 +145,15 @@ input, textarea {
 .snapToEnd {
   scroll-snap-align: end;
 }
+
+@media screen and (max-width: 120rem) {
+  :root {
+    --contentPadding: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 86rem) {
+  :root {
+    --contentPadding: 1.2rem;
+  }
+}

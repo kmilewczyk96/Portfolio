@@ -49,3 +49,89 @@
 .next {
   transform: rotateY(30deg) translateX(200%);
 }
+
+@media screen and (max-width: 120rem) {
+  .wrapper {
+    max-width: 160rem;
+  }
+
+  .carouselElements {
+    perspective: 750px;
+  }
+
+  .carouselCard {
+    width: 48rem;
+  }
+}
+
+@media screen and (max-width: 100rem) {
+  .wrapper {
+    max-width: 136.6rem;
+  }
+
+  .carouselElements {
+    perspective: 500px;
+  }
+
+  .carouselCard {
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 86rem) {
+  .wrapper {
+    max-width: 102.4rem;
+  }
+
+  .carouselElements {
+    perspective: 250px;
+  }
+
+  .carouselCard {
+    width: 32rem;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  .imageWrapper {
+
+  }
+
+  .projectTitle {
+
+  }
+
+  .projectTags {
+
+  }
+
+  .projectDescription {
+
+  }
+
+  .actions {
+
+  }
+}
+
+@media screen and (max-aspect-ratio: 4/3) {
+  .imageWrapper {
+
+  }
+
+  .projectTitle {
+
+  }
+
+  .projectTags {
+
+  }
+
+  .projectDescription {
+
+  }
+
+  .actions {
+
+  }
+}
