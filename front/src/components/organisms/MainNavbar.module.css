@@ -9,7 +9,7 @@
 }
 
 .linkWrapper {
-  max-width: min(80rem, 100%);
+  max-width: min(80rem, 80%);
   display: flex;
   list-style: none;
   gap: 3.2rem;
@@ -19,4 +19,10 @@
 
 .hidden {
   opacity: 0;
+}
+
+@media screen and (max-width: 64rem) {
+  .mainNavbar {
+    display: none;
+  }
 }

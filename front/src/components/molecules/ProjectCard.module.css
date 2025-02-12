@@ -119,6 +119,32 @@
   }
 }
 
+@media screen and (max-width: 64rem) {
+  .imageWrapper {
+    margin-bottom: 0.4rem;
+  }
+
+  .projectTitle {
+    font-size: 2rem;
+  }
+
+  .projectTags {
+    margin-bottom: 0.4rem;
+  }
+
+  .projectDescription {
+    font-size: 1rem;
+  }
+
+  .actions {
+    margin-bottom: 2.4rem;
+  }
+
+  .linkButton {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 40rem) {
   .imageWrapper {
 

@@ -63,3 +63,9 @@
     font-size: 1.6rem;
   }
 }
+
+@media screen and (max-width: 64rem) {
+  .dynamicLink {
+    font-size: 1.4rem;
+  }
+}

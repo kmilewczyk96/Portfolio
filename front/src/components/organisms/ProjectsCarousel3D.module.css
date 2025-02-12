@@ -92,6 +92,29 @@
   }
 }
 
+@media screen and (max-width: 64rem) {
+  .wrapper {
+    max-width: 102.4rem;
+    overflow: hidden;
+  }
+
+  .carouselElements {
+    perspective: 250px;
+  }
+
+  .carouselCard {
+    max-width: 24rem;
+  }
+
+  .left {
+    opacity: 0.5;
+  }
+
+  .right {
+    opacity: 0.5;
+  }
+}
+
 @media screen and (max-width: 40rem) {
   .imageWrapper {
 

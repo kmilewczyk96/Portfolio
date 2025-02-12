@@ -64,10 +64,25 @@
   }
 }
 
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: 64rem) {
+  .contentWrapper {
+    max-width: calc(100% - 2.4rem);
+  }
 
+  .sectionName {
+    font-size: 4.4rem;
+    padding-inline: 4.8rem;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+}
+
+@media screen and (max-width: 30rem) {
+}
+
+@media screen and (max-width: 20rem) {
 }
 
 @media screen and (max-aspect-ratio: 4/3) {
-
 }

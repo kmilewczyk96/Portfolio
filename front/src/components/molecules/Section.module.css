@@ -19,3 +19,9 @@
     padding-block: 6.4rem;
   }
 }
+
+@media screen and (max-width: 64rem) {
+  .wrapper:not(#home) {
+    padding-block: 1.2rem;
+  }
+}
