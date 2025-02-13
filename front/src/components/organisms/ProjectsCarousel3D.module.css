@@ -38,7 +38,7 @@
   z-index: 5;
   opacity: 1;
   filter: none;
-  box-shadow: 0 0 15px 5px #000;
+  /*box-shadow: 0 0 15px 5px #000;*/
 }
 
 .right {
@@ -96,44 +96,53 @@
   .wrapper {
     max-width: 102.4rem;
     overflow: hidden;
+    grid-template-areas:
+        "carousel carousel"
+        "buttonLeft buttonRight";
   }
 
   .carouselElements {
     perspective: 250px;
   }
 
-  .carouselCard {
-    max-width: 24rem;
-  }
-
   .left {
-    opacity: 0.5;
+    transform: rotateY(-15deg) translateX(-120%);
   }
 
   .right {
-    opacity: 0.5;
+    transform: rotateY(15deg) translateX(120%);
+  }
+}
+
+/* Additional media query for Project Card.*/
+@media screen and (max-width: 48rem) {
+  .carouselCard {
+    width: 32rem;
   }
 }
 
 @media screen and (max-width: 40rem) {
-  .imageWrapper {
-
+  .carouselElements {
+    transform-style: flat;
+    perspective: 0;
   }
 
-  .projectTitle {
-
+  .carouselCard {
+    transition: transform 0s, opacity 0s, filter 0.5s, box-shadow 0.5s;
   }
 
-  .projectTags {
-
+  .left {
+    opacity: 0;
   }
 
-  .projectDescription {
-
+  .right {
+    opacity: 0;
   }
+}
 
-  .actions {
-
+@media screen and (max-width: 25rem) {
+  .carouselCard {
+    width: 24rem;
   }
 }
 
