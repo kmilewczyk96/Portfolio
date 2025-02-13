@@ -15,8 +15,7 @@
   background-color: #1a1a1a;
   justify-content: center;
   z-index: 2;
-  padding-inline: var(--contentPadding);
-  margin-inline: auto;
+  padding-inline: 3.2rem;
 }
 
 .title {
@@ -42,16 +41,21 @@
 }
 
 .photoWrapper {
+  position: relative;
   display: flex;
-  width: 100%;
-  max-height: max(72em, 100vh);
-  padding-inline: 2.4em;
+  max-height: max(64rem, 100vh);
 }
 
 .photo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   align-self: flex-end;
   max-height: calc(100% - 2.4em);
-  margin-inline: auto;
+
+  & img {
+    max-width: unset;
+  }
 }
 
 @media screen and (max-width: 120rem){
@@ -68,11 +72,15 @@
   }
 
   .cta {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 
-@media screen and (max-width: 86rem){
+@media screen and (max-width: 86rem) {
+  .personalInfoWrapper {
+    padding-inline: 2.4rem;
+  }
+
   .title {
     font-size: 3rem;
   }
@@ -86,11 +94,11 @@
   }
 
   .cta {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 
-@media screen and (max-width: 40rem){
+@media screen and (max-width: 40rem) {
   .title {
     font-size: 2.4rem;
   }
@@ -108,14 +116,58 @@
   }
 }
 
+@media screen and (max-width: 30rem) {
+  .personalInfoWrapper {
+    padding-inline: 1.2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .name {
+    font-size: 3.6rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .cta {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 20rem) {
+  .personalInfoWrapper {
+    padding-inline: 0.8rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .cta {
+    font-size: 0.8rem;
+  }
+}
+
 @media screen and (max-aspect-ratio: 4/3) {
   .heroSection {
-    background-image: none;
+    background: none;
   }
 
   .contentWrapper {
     grid-template: 100% / 100%;
-    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26, 0.9);
   }
 
   .personalInfoWrapper,
@@ -124,6 +176,11 @@
   }
 
   .personalInfoWrapper {
-    background-color: rgba(26, 26, 26, 0.9);
+    background: none;
+    margin-inline: auto;
+  }
+
+  .photoWrapper {
+    z-index: -1;
   }
 }

@@ -71,7 +71,8 @@
 
   .sectionName {
     font-size: 4.4rem;
-    padding-inline: 4.8rem;
+    border-bottom: 1px solid hsl(from #c3bcc2 h s l / 0.75);
+    padding: 0 1.2rem 0.8rem;
   }
 }
 
