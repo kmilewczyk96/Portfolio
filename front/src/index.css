@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  min-width: 35rem;
+  min-width: 25rem;
 }
 
 ::-webkit-scrollbar {
@@ -120,7 +120,7 @@ input, textarea {
   inset: 0;
   box-shadow: 0 0 10vw rgba(0, 0, 0, 0.9) inset;
 
-  @media screen and (max-aspect-ratio: 4/3) {
+  @media screen and (max-width: 86rem) {
     opacity: 0;
   }
 }
