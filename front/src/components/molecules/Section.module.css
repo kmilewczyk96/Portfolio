@@ -1,27 +1,83 @@
-.wrapper:not(#home) {
+.wrapper {
+  max-width: min(192rem, 100%);
+  padding-inline: 2.4rem;
   padding-block: 9.6rem;
+  margin-inline: auto;
+}
+
+.title {
+  font-size: 7.2rem;
+  margin-bottom: 1em;
 }
 
 @media screen and (max-width: 120rem) {
-  .wrapper:not(#home) {
+  .wrapper {
+    max-width: 160rem;
     padding-block: 8rem;
+  }
+
+  .title {
+    font-size: 6.4rem;
   }
 }
 
 @media screen and (max-width: 100rem) {
-  .wrapper:not(#home) {
+  .wrapper {
+    max-width: 136.6rem;
     padding-block: 6.4rem;
+  }
+
+  .title {
+    font-size: 5.2rem;
   }
 }
 
 @media screen and (max-width: 86rem) {
-  .wrapper:not(#home) {
+  .wrapper {
+    max-width: 102.4rem;
+    padding-inline: 1.2rem;
     padding-block: 6.4rem;
+  }
+
+  .title {
+    font-size: 4.4rem;
   }
 }
 
 @media screen and (max-width: 64rem) {
-  .wrapper:not(#home) {
+  .wrapper {
+    max-width: calc(100% - 2.4rem);
+    padding-inline: 0.4rem;
+    padding-block: 1.2rem;
+  }
+
+  .title {
+    font-size: 4.4rem;
+    border-bottom: 1px solid hsl(from #c3bcc2 h s l / 0.75);
+    padding: 0 0.25em 0.1em;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .wrapper {
+    padding-inline: 0.4rem;
+    padding-block: 1.2rem;
+  }
+
+  .title {
+    font-size: 3.6rem;
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 20rem) {
+  .wrapper {
+    padding-inline: 0.2rem;
     padding-block: 1.2rem;
   }
 }

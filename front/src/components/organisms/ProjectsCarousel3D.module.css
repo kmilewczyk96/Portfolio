@@ -117,7 +117,7 @@
 /* Additional media query for Project Card.*/
 @media screen and (max-width: 48rem) {
   .carouselCard {
-    width: 32rem;
+    width: 28rem;
   }
 }
 
