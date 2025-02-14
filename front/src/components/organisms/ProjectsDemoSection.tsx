@@ -55,15 +55,8 @@ const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
     }
 
     return (
-      <Section sectionID={"projects"} ref={ref}>
-        <div className={[styles.contentWrapper, "sectionInlineWrapper"].join(" ")}>
-          <GlitchText
-            text={"Projects"}
-            className={styles.sectionName}
-            htmlTextTag={htmlTextTags.h3}
-          />
-          {content}
-        </div>
+      <Section sectionID={"projects"} title={"Projects"} ref={ref}>
+        {content}
       </Section>
     );
   }

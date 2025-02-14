@@ -133,11 +133,6 @@ input, textarea {
   align-items: center;
 }
 
-.sectionInlineWrapper {
-  max-width: min(192rem, 100%);
-  margin-inline: auto;
-}
-
 .snapToStart {
   scroll-snap-align: start;
 }

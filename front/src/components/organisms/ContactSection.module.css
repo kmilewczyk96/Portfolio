@@ -1,12 +1,3 @@
-.contentWrapper {
-  padding-inline: var(--contentPadding);
-}
-
-.sectionName {
-  font-size: 7.2rem;
-  margin-bottom: 9.6rem;
-}
-
 .contactWrapper {
   --offsetY: 6.4rem;
   display: grid;

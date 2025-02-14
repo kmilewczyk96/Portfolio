@@ -7,6 +7,8 @@
 .contentWrapper {
   display: grid;
   grid-template-columns: 50% 50%;
+  max-width: min(192rem, 100%);
+  margin-inline: auto;
 }
 
 .personalInfoWrapper {
