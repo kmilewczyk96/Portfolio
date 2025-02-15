@@ -47,7 +47,7 @@ export default function CarouselButton({buttonFn, direction, maxClicksPerSecond=
       {...props}
       onClick={handleClick}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#242424" viewBox="0 0 256 256">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#242424" viewBox="0 0 256 256">
         {path}
       </svg>
     </button>

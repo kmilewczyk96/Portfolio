@@ -31,7 +31,7 @@
 
 .left {
   opacity: 1;
-  transform: rotateY(-10deg) translateX(-120%);
+  transform: rotateY(-12deg) translateX(-120%);
 }
 
 .active {
@@ -43,7 +43,7 @@
 
 .right {
   opacity: 1;
-  transform: rotateY(10deg) translateX(120%);
+  transform: rotateY(12deg) translateX(120%);
 }
 
 .next {
@@ -95,10 +95,11 @@
 @media screen and (max-width: 64rem) {
   .wrapper {
     max-width: 102.4rem;
-    overflow: hidden;
     grid-template-areas:
         "carousel carousel"
         "buttonLeft buttonRight";
+    row-gap: 4.8rem;
+    column-gap: 6.4rem;
   }
 
   .carouselElements {
@@ -122,6 +123,11 @@
 }
 
 @media screen and (max-width: 40rem) {
+  .wrapper {
+    row-gap: 3.2rem;
+    column-gap: 4.8rem;
+  }
+
   .carouselElements {
     transform-style: flat;
     perspective: 0;
@@ -140,30 +146,15 @@
   }
 }
 
-@media screen and (max-width: 25rem) {
-  .carouselCard {
-    width: 24rem;
+@media screen and (max-width: 30rem) {
+  .wrapper {
+    row-gap: 2.4rem;
+    column-gap: 3.2rem;
   }
 }
 
-@media screen and (max-aspect-ratio: 4/3) {
-  .imageWrapper {
-
-  }
-
-  .projectTitle {
-
-  }
-
-  .projectTags {
-
-  }
-
-  .projectDescription {
-
-  }
-
-  .actions {
-
+@media screen and (max-width: 25rem) {
+  .carouselCard {
+    width: 24rem;
   }
 }
