@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-areas:
       "topLeft carousel topRight"
@@ -107,11 +108,11 @@
   }
 
   .left {
-    transform: rotateY(-15deg) translateX(-120%);
+    transform: rotateY(-15deg) translateX(-115%);
   }
 
   .right {
-    transform: rotateY(15deg) translateX(120%);
+    transform: rotateY(15deg) translateX(115%);
   }
 }
 
