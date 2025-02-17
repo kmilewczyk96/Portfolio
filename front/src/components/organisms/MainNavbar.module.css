@@ -21,7 +21,8 @@
   opacity: 0;
 }
 
-@media screen and (max-width: 64rem) {
+@media screen and (max-width: 64rem),
+(hover: none) {
   .mainNavbar {
     display: none;
   }

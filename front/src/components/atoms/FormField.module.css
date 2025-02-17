@@ -1,6 +1,9 @@
 .wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
   color: #c3bcc2;
+  font: inherit;
 }
 
 .wrapper.error {
@@ -14,8 +17,7 @@
 
 .wrapper > input,
 .wrapper > textarea {
-  display: block;
-  width: 32ch;
+  width: 100%;
   color: inherit;
   background-color: transparent;
   border: 1px solid #c3bcc2;
@@ -42,12 +44,34 @@
 
 .wrapper > label {
   display: block;
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
 }
 
 .wrapper > span {
   position: absolute;
-  inset: auto 0.6rem -2.4rem auto;
-  font-size: 1.6rem;
+  inset: auto 0.6rem -1.5em auto;
+  font-size: 0.75em;
+}
+
+@media screen and (max-width: 120rem) {
+  .wrapper > textarea {
+    height: 9em;
+  }
+}
+
+@media screen and (max-width: 100rem) {
+  .wrapper > textarea {
+    height: 8em;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .wrapper > textarea {
+    height: auto;
+  }
 }
