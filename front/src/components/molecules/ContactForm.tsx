@@ -63,8 +63,8 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
           <FormField label={"Company"} name={"company"} placeholder={"MegaCorp Inc."}/>
           <FormField label={"Message"} name={"message"} component={"textarea"} placeholder={"Your message..."}/>
         </div>
-        <div className={styles.actions}>
-          <Button type={"submit"}>Submit</Button>
+        <div className={"center"}>
+          <Button type={"submit"} className={styles.submitBtn}>Submit</Button>
         </div>
       </Form>
     </Formik>

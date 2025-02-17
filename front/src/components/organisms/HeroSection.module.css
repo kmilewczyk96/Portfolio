@@ -40,10 +40,12 @@
 
 .cta {
   align-self: center;
+  font-size: 1.8rem;
 }
 
 .photoWrapper {
   position: relative;
+  overflow: hidden;
   display: flex;
   max-height: max(64rem, 100vh);
 }

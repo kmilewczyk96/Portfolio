@@ -124,7 +124,7 @@ input, textarea {
   box-shadow: 0 0 10vw rgba(0, 0, 0, 0.9) inset;
 
   @media screen and (max-width: 86rem) {
-    opacity: 0;
+    display: none;
   }
 }
 

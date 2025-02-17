@@ -41,6 +41,10 @@
   margin-bottom: 6.4rem;
 }
 
+.linkButton {
+  font-size: 1.8rem;
+}
+
 @media screen and (max-width: 120rem) {
   .imageWrapper {
     margin-bottom: 1.6rem;

@@ -14,3 +14,15 @@
     filter: none;
   }
 }
+
+@media screen and (max-width: 86rem) {
+  .base {
+    width: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .base {
+    width: 2rem;
+  }
+}

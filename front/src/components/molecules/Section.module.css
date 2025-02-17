@@ -35,7 +35,6 @@
 @media screen and (max-width: 86rem) {
   .wrapper {
     max-width: 102.4rem;
-    padding-inline: 1.2rem;
     padding-block: 6.4rem;
   }
 
@@ -48,7 +47,8 @@
   .wrapper {
     max-width: calc(100% - 2.4rem);
     padding-inline: 0.4rem;
-    padding-block: 1.2rem;
+    padding-block: 2.4rem;
+    margin-bottom: 2.4rem;
   }
 
   .title {
@@ -61,7 +61,6 @@
 @media screen and (max-width: 48rem) {
   .wrapper {
     padding-inline: 0.4rem;
-    padding-block: 1.2rem;
   }
 
   .title {
@@ -70,6 +69,10 @@
 }
 
 @media screen and (max-width: 30rem) {
+  .wrapper {
+
+  }
+
   .title {
     font-size: 2.4rem;
   }
@@ -78,6 +81,5 @@
 @media screen and (max-width: 20rem) {
   .wrapper {
     padding-inline: 0.2rem;
-    padding-block: 1.2rem;
   }
 }
