@@ -2,10 +2,10 @@
   position: relative;
   width: 100%;
   color: #aba4aa;
-  font-size: 2.4rem;
+  font-size: 1em;
   font-weight: 400;
   transition: color 0.5s, border 0.5s, text-shadow 0.5s;
-  padding-block: 0.4rem;
+  padding-block: 0.2em;
 }
 
 .dynamicLink::before,
@@ -13,7 +13,7 @@
   opacity: 0.1;
   content: "";
   position: absolute;
-  inset: -0.2rem  0 100% 0;
+  inset: -0.1em  0 100% 0;
   background-color: #c3bcc2;
   transition: opacity 0.5s;
   z-index: -1;
@@ -43,29 +43,5 @@
     &::after {
       opacity: 0.5;
     }
-  }
-}
-
-@media screen and (max-width: 120rem) {
-  .dynamicLink {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 100rem) {
-  .dynamicLink {
-    font-size: 1.8rem;
-  }
-}
-
-@media screen and (max-width: 86rem) {
-  .dynamicLink {
-    font-size: 1.6rem;
-  }
-}
-
-@media screen and (max-width: 64rem) {
-  .dynamicLink {
-    font-size: 1.4rem;
   }
 }

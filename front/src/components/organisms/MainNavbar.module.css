@@ -5,15 +5,15 @@
   background-color: rgba(26, 26, 26, 0.1);
   backdrop-filter: blur(3px);
   transition: opacity 0.5s;
-  padding-top: 0.8rem;
+  padding-top: 0.25em;
 }
 
 .linkWrapper {
-  max-width: min(80rem, 80%);
+  max-width: min(40em, 80%);
   display: flex;
   list-style: none;
-  gap: 3.2rem;
-  padding-top: 0.2rem;
+  gap: 1.5em;
+  padding-top: 0.25em;
   margin-inline: auto;
 }
 

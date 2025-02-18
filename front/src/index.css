@@ -158,7 +158,7 @@ input, textarea {
   }
 }
 
-@media screen and (max-width: 64rem) {
+@media screen and (max-width: 86rem) {
   body {
     font-size: 1.6rem;
   }

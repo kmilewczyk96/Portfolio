@@ -1,4 +1,5 @@
 .wrapper {
+  overflow: hidden;
   background-color: #242424;
   border: 3px solid #000;
   border-radius: 9px;
@@ -7,7 +8,7 @@
 .imageWrapper {
   position: relative;
   border-bottom: 3px solid #000;
-  margin-bottom: 2.4rem;
+  margin-bottom: 0.5em;
 }
 
 .projectImage {
@@ -17,183 +18,31 @@
   filter: grayscale(50%);
 }
 
+.infoWrapper {
+  padding-inline: 1em;
+}
+
 .projectTitle {
-  font-size: 4.8rem;
+  font-size: 2em;
   font-weight: 600;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.2em;
 }
 
 .projectTags {
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.75em;
 }
 
 .projectDescription {
-  font-size: 1.8rem;
+  font-size: 0.75em;
   margin-bottom: 2em;
 }
 
 .actions {
   display: flex;
   justify-content: center;
-  margin-bottom: 6.4rem;
+  margin-bottom: 3em;
 }
 
 .linkButton {
-  font-size: 1.8rem;
-}
-
-@media screen and (max-width: 120rem) {
-  .imageWrapper {
-    margin-bottom: 1.6rem;
-  }
-
-  .projectTitle {
-    font-size: 3.6rem;
-  }
-
-  .projectTags {
-    margin-bottom: 1.2rem;
-  }
-
-  .projectDescription {
-    font-size: 1.6rem;
-  }
-
-  .actions {
-    margin-bottom: 4.8rem;
-  }
-
-  .linkButton {
-    font-size: 1.6rem;
-  }
-}
-
-@media screen and (max-width: 100rem) {
-  .imageWrapper {
-    margin-bottom: 1.2rem;
-  }
-
-  .projectTitle {
-    font-size: 3rem;
-  }
-
-  .projectTags {
-    margin-bottom: 0.8rem;
-  }
-
-  .projectDescription {
-    font-size: 1.4rem;
-  }
-
-  .actions {
-    margin-bottom: 3.2rem;
-  }
-
-  .linkButton {
-    font-size: 1.4rem;
-  }
-}
-
-@media screen and (max-width: 86rem) {
-  .imageWrapper {
-    margin-bottom: 0.8rem;
-  }
-
-  .projectTitle {
-    font-size: 2.4rem;
-  }
-
-  .projectTags {
-    margin-bottom: 0.8rem;
-  }
-
-  .projectDescription {
-    font-size: 1.2rem;
-  }
-
-  .actions {
-    margin-bottom: 3.2rem;
-  }
-
-  .linkButton {
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (max-width: 64rem) {
-  .imageWrapper {
-    margin-bottom: 0.4rem;
-  }
-
-  .projectTitle {
-    font-size: 2rem;
-  }
-
-  .projectTags {
-    margin-bottom: 0.4rem;
-  }
-
-  .projectDescription {
-    font-size: 1rem;
-  }
-
-  .actions {
-    margin-bottom: 2.4rem;
-  }
-
-  .linkButton {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 40rem) {
-  .imageWrapper {
-
-  }
-
-  .projectTitle {
-
-  }
-
-  .projectTags {
-
-  }
-
-  .projectDescription {
-
-  }
-
-  .actions {
-
-  }
-
-  .linkButton {
-
-  }
-}
-
-@media screen and (max-aspect-ratio: 4/3) {
-  .imageWrapper {
-
-  }
-
-  .projectTitle {
-
-  }
-
-  .projectTags {
-
-  }
-
-  .projectDescription {
-
-  }
-
-  .actions {
-
-  }
-
-  .linkButton {
-
-  }
+  font-size: 0.75em;
 }
