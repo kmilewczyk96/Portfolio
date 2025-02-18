@@ -4,7 +4,7 @@
   isolation: isolate;
   grid-template: var(--offsetY) auto var(--offsetY) / 1fr auto calc(2 * var(--offsetY));
   margin-top: calc(var(--offsetY) * -1);
-  margin-bottom: 9.6rem;
+  margin-bottom: 2em;
 }
 
 .background {
@@ -18,7 +18,7 @@
 .background::after {
   content: "";
   position: absolute;
-  inset: -.5rem;
+  inset: -0.25em;
   background: conic-gradient(var(--fxRed), var(--fxGreen), var(--fxBlue), var(--fxRed));
   border-radius: inherit;
   z-index: -1;
@@ -58,7 +58,7 @@
 
 @media screen and (max-width: 86rem) {
     .contactWrapper {
-      --offsetY: 2.4rem;
+      --offsetY: 1.2rem;
     }
 }
 

@@ -1,6 +1,5 @@
 .wrapper {
   width: 64rem;
-  font-size: 2.4rem;
   backdrop-filter: blur(3px);
   background-color: rgba(26, 26, 26, 0.3);
   border: 1px solid #000;
@@ -23,14 +22,9 @@
   box-shadow: 0 0 5px 5px #1a1a1a;
 }
 
-.submitBtn {
-  font-size: 1em;
-}
-
 @media screen and (max-width: 120rem) {
   .wrapper {
     width: 56rem;
-    font-size: 2rem;
     padding: 8rem;
   }
 }
@@ -38,7 +32,6 @@
 @media screen and (max-width: 100rem) {
   .wrapper {
     width: 48rem;
-    font-size: 1.8rem;
     padding: 6.4rem;
   }
 }
@@ -46,7 +39,6 @@
 @media screen and (max-width: 86rem) {
   .wrapper {
     width: 36rem;
-    font-size: 1.6rem;
     padding: 4.8rem;
   }
 }
@@ -57,24 +49,5 @@
     background-color: unset;
     border: none;
     padding: 0;
-  }
-}
-
-@media screen and (max-width: 48rem) {
-  .wrapper {
-    font-size: 1.4rem;
-  }
-}
-
-@media screen and (max-width: 30rem) {
-  .wrapper {
-    width: min(40ch, 100%);
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (max-width: 20rem) {
-  .wrapper {
-    font-size: 1rem;
   }
 }

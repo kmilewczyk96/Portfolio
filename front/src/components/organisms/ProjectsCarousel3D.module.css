@@ -22,8 +22,9 @@
   filter: saturate(25%) blur(3px) brightness(75%);
   opacity: 0;
   grid-area: scene;
-  width: 60rem;
+  width: min(50%, 40ch);
   transition: transform 0.7s, opacity 0.5s, filter 0.5s, box-shadow 0.5s;
+  margin-inline: auto;
 }
 
 .prev {
@@ -39,7 +40,6 @@
   z-index: 5;
   opacity: 1;
   filter: none;
-  /*box-shadow: 0 0 15px 5px #000;*/
 }
 
 .right {
@@ -59,10 +59,6 @@
   .carouselElements {
     perspective: 750px;
   }
-
-  .carouselCard {
-    width: 48rem;
-  }
 }
 
 @media screen and (max-width: 100rem) {
@@ -73,10 +69,6 @@
   .carouselElements {
     perspective: 500px;
   }
-
-  .carouselCard {
-    width: 40rem;
-  }
 }
 
 @media screen and (max-width: 86rem) {
@@ -86,10 +78,6 @@
 
   .carouselElements {
     perspective: 250px;
-  }
-
-  .carouselCard {
-    width: 32rem;
   }
 }
 
@@ -108,22 +96,15 @@
   }
 
   .left {
-    transform: rotateY(-15deg) translateX(-115%);
+    transform: rotateY(-15deg) translateX(-120%);
   }
 
   .right {
-    transform: rotateY(15deg) translateX(115%);
+    transform: rotateY(15deg) translateX(120%);
   }
 }
 
-/* Additional media query for Project Card.*/
 @media screen and (max-width: 48rem) {
-  .carouselCard {
-    width: 28rem;
-  }
-}
-
-@media screen and (max-width: 40rem) {
   .wrapper {
     row-gap: 3.2rem;
     column-gap: 4.8rem;
@@ -135,6 +116,7 @@
   }
 
   .carouselCard {
+    width: min(40ch, 100%);
     transition: transform 0s, opacity 0s, filter 0.5s, box-shadow 0.5s;
   }
 
@@ -151,11 +133,5 @@
   .wrapper {
     row-gap: 2.4rem;
     column-gap: 3.2rem;
-  }
-}
-
-@media screen and (max-width: 25rem) {
-  .carouselCard {
-    width: 24rem;
   }
 }

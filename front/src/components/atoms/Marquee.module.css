@@ -1,9 +1,7 @@
 .wrapper {
-  --itemGap: 0.6rem;
-  overflow: hidden;
+  --itemGap: 0.25em;
   display: flex;
   gap: 0;
-  padding-inline: var(--contentPadding);
 }
 
 .wrapperAnimated {
@@ -13,14 +11,15 @@
 .wrapperAnimated:after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -1em;
   background:
       linear-gradient(
           90deg,
           rgba(36, 36, 36, 85) 0%,
-          rgba(0, 0, 0, 0) calc(var(--contentPadding) * 2),
-          rgba(0, 0, 0, 0) calc(100% - (var(--contentPadding) * 2)),
+          rgba(0, 0, 0, 0) 10%,
+          rgba(0, 0, 0, 0) 90%,
           rgba(36, 36, 36, 85) 100%);
+  z-index: 500;
 }
 
 .marquee {
