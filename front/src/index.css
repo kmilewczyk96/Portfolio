@@ -34,8 +34,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --contentPadding: 2.4rem;
-
   --fxRed: rgba(230, 73, 128, 0.5);
   --fxGreen: rgba(56, 217, 169, 0.5);
   --fxBlue: rgba(116, 192, 252, 0.5);
@@ -43,6 +41,7 @@ html {
 
 body {
   min-width: 25rem;
+  font-size: 2.4rem;
 }
 
 ::-webkit-scrollbar {
@@ -146,14 +145,39 @@ input, textarea {
   scroll-snap-align: end;
 }
 
+/* Media Queries */
 @media screen and (max-width: 120rem) {
-  :root {
-    --contentPadding: 1.6rem;
+  body {
+    font-size: 2rem;
   }
 }
 
-@media screen and (max-width: 86rem) {
-  :root {
-    --contentPadding: 1.2rem;
+@media screen and (max-width: 100rem) {
+  body {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 20rem) {
+  body {
+    font-size: 1rem;
   }
 }
