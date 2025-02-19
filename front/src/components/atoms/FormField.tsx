@@ -14,11 +14,20 @@ interface IProps {
   type?: inputType,
   placeholder?: string | undefined,
   component?: componentType,
-  className?: string | undefined
+  className?: string | undefined,
+  disabled?: boolean,
 }
 
 export default function FormField(
-  {label, name, type = "text", placeholder = undefined, component = "input", className = undefined}: IProps
+  {
+    label,
+    name,
+    type = "text",
+    placeholder = undefined,
+    component = "input",
+    className = undefined,
+    disabled=false
+  }: IProps
 ): ReactElement {
   const [_, meta] = useField(name);
 
@@ -27,7 +36,7 @@ export default function FormField(
       [styles.wrapper, className, meta.error && meta.touched ? styles.error : undefined].join(" ")
     }>
       <label htmlFor={name}>{label}</label>
-      <Field name={name} type={type} placeholder={placeholder} component={component} rows={"8"}/>
+      <Field name={name} type={type} placeholder={placeholder} component={component} rows={"8"} disabled={disabled}/>
       {meta.error && meta.touched ? (
         <span>{meta.error}</span>
       ) : null}
