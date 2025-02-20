@@ -23,7 +23,7 @@
 .wrapper > img:nth-child(2) {
   left: -1.5em;
   opacity: 0;
-  filter: drop-shadow(-0.5em 0 0 var(--fxRed));
+  filter: drop-shadow(-0.5em 0 0 var(--fxRed--05));
   animation: glitch2 5s infinite;
   animation-delay: inherit;
 }
@@ -31,7 +31,7 @@
 .wrapper > img:nth-child(3) {
   left: 1.5em;
   opacity: 0;
-  filter: drop-shadow(0.5em 0 0 var(--fxGreen));
+  filter: drop-shadow(0.5em 0 0 var(--fxGreen--05));
   animation: glitch3 5s infinite;
   animation-delay: inherit;
 }

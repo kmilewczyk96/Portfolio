@@ -25,34 +25,34 @@
 
 @keyframes glitch {
   0% {
-    text-shadow: 0.05em 0 var(--fxRed),
-    -0.025em -0.025em 0 var(--fxGreen),
-    0.025em 0.025em 0 var(--fxBlue);
+    text-shadow: 0.05em 0 var(--fxRed--05),
+    -0.025em -0.025em 0 var(--fxGreen--05),
+    0.025em 0.025em 0 var(--fxBlue--05);
   }
   2% {
-    text-shadow: 0.05em 0 var(--fxRed),
-    -0.025em -0.025em 0 var(--fxGreen),
-    0.025em 0.025em 0 var(--fxBlue);
+    text-shadow: 0.05em 0 var(--fxRed--05),
+    -0.025em -0.025em 0 var(--fxGreen--05),
+    0.025em 0.025em 0 var(--fxBlue--05);
   }
   2.1% {
-    text-shadow: -0.15em 0 var(--fxRed),
-    0.15em 0.025em 0 var(--fxGreen),
-    -0.025em -0.025em 0 var(--fxBlue);
+    text-shadow: -0.15em 0 var(--fxRed--05),
+    0.15em 0.025em 0 var(--fxGreen--05),
+    -0.025em -0.025em 0 var(--fxBlue--05);
   }
   5% {
-    text-shadow: -0.15em 0 var(--fxRed),
-    0.15em 0.025em 0 var(--fxGreen),
-    -0.025em -0.025em 0 var(--fxBlue);
+    text-shadow: -0.15em 0 var(--fxRed--05),
+    0.15em 0.025em 0 var(--fxGreen--05),
+    -0.025em -0.025em 0 var(--fxBlue--05);
   }
   5.1% {
-    text-shadow: 0.05em 0 var(--fxRed),
-    -0.025em -0.025em 0 var(--fxGreen),
-    -0.025em -0.025em 0 var(--fxBlue);
+    text-shadow: 0.05em 0 var(--fxRed--05),
+    -0.025em -0.025em 0 var(--fxGree--05n),
+    -0.025em -0.025em 0 var(--fxBlue--05);
   }
   20% {
-    text-shadow: 0.05em 0 var(--fxRed),
-    -0.025em -0.05em 0 var(--fxGreen),
-    -0.025em -0.025em 0 var(--fxBlue);
+    text-shadow: 0.05em 0 var(--fxRed--05),
+    -0.025em -0.05em 0 var(--fxGreen--05),
+    -0.025em -0.025em 0 var(--fxBlue--05);
   }
   20.1% {
     text-shadow: none;
@@ -61,14 +61,14 @@
     text-shadow: none;
   }
   25.1% {
-    text-shadow: 0.05em 0 var(--fxRed),
-    -0.025em -0.05em 0 var(--fxGreen),
-    -0.025em -0.025em 0 var(--fxBlue);
+    text-shadow: 0.05em 0 var(--fxRed--05),
+    -0.025em -0.05em 0 var(--fxGreen--05),
+    -0.025em -0.025em 0 var(--fxBlue--05);
   }
   26% {
-    text-shadow: 0.05em 0 var(--fxRed),
-    -0.025em -0.05em 0 var(--fxGreen),
-    -0.025em -0.025em 0 var(--fxBlue);
+    text-shadow: 0.05em 0 var(--fxRed--05),
+    -0.025em -0.05em 0 var(--fxGreen--05),
+    -0.025em -0.025em 0 var(--fxBlue--05);
   }
   26.1% {
     text-shadow: none;
@@ -77,14 +77,14 @@
     text-shadow: none
   }
   30.1% {
-    text-shadow: 0.05em 0 var(--fxRed),
-    0.025em -0.05em 0 var(--fxGreen),
-    0.025em -0.025em 0 var(--fxBlue);
+    text-shadow: 0.05em 0 var(--fxRed--05),
+    0.025em -0.05em 0 var(--fxGreen--05),
+    0.025em -0.025em 0 var(--fxBlue--05);
   }
   32% {
-    text-shadow: 0.05em 0 var(--fxRed),
-    0.025em -0.05em 0 var(--fxGreen),
-    0.025em -0.025em 0 var(--fxBlue);
+    text-shadow: 0.05em 0 var(--fxRed--05),
+    0.025em -0.05em 0 var(--fxGreen--05),
+    0.025em -0.025em 0 var(--fxBlue--05);
   }
   32.1% {
     text-shadow: none;

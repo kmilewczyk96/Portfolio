@@ -34,9 +34,21 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --fxRed: rgba(230, 73, 128, 0.5);
-  --fxGreen: rgba(56, 217, 169, 0.5);
-  --fxBlue: rgba(116, 192, 252, 0.5);
+  --fxRed--01: rgba(230, 73, 128, 0.1);
+  --fxGreen--01: rgba(56, 217, 169, 0.1);
+  --fxBlue--01: rgba(116, 192, 252, 0.1);
+
+  --fxRed--05: rgba(230, 73, 128, 0.5);
+  --fxGreen--05: rgba(56, 217, 169, 0.5);
+  --fxBlue--05: rgba(116, 192, 252, 0.5);
+
+  --fxRed--08: rgba(230, 73, 128, 0.8);
+  --fxGreen--08: rgba(56, 217, 169, 0.8);
+  --fxBlue--08: rgba(116, 192, 252, 0.8);
+
+  --fxRed--10: rgb(230, 73, 128);
+  --fxGreen--10: rgb(56, 217, 169);
+  --fxBlue--10: rgb(116, 192, 252);
 }
 
 body {
