@@ -27,14 +27,14 @@
 @media (hover: hover) {
   .buttonDefault:not(:disabled) {
     &.buttonDefault:hover {
-      color: hsl(from var(--fxGreen) h s l / 1);
+      color: var(--fxGreen--10);
       &::before,
       &::after {
         opacity: 1;
       }
       &::after {
         filter: blur(9px);
-        background-color: hsl(from var(--fxGreen) h s l / 1);
+        background-color: var(--fxGreen--10);
       }
     }
     &.buttonDefault:active {

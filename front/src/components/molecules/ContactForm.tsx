@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 
 import Button from "../atoms/Button.tsx";
 import FormField from "../atoms/FormField.tsx";
-// import Spinner from "../atoms/Spinner.tsx";
+import Spinner from "../atoms/Spinner.tsx";
 import {useRequest} from "../../hooks/useRequest.ts";
 import {httpRequestMethods} from "../../utils/enums.ts";
 import {IMessage} from "../../utils/interfaces.ts";
@@ -40,31 +40,33 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
     config: config,
   });
   // @ts-ignore
-  const formInactive: boolean = isFetching || error?.message || fetchedData.length !== 0;
-  //
-  // let status: ReactElement | null = null;
-  // if (isFetching) {
-  //   status = (
-  //     <>
-  //       <p className={styles.statusMessage}>Sending</p>
-  //       <Spinner/>
-  //     </>
-  //   );
-  // }
-  // if (error?.message) {
-  //   status = (
-  //     <>
-  //       <p className={styles.statusMessage}>Something went wrong!</p>
-  //     </>
-  //   );
-  // }
-  // if (fetchedData.length !== 0) {
-  //   status = (
-  //     <>
-  //       <p className={styles.statusMessage}>Your message was successfully sent!</p>
-  //     </>
-  //   )
-  // }
+  const formInactive: boolean = false;
+
+  let status: ReactElement | null = null;
+  if (isFetching) {
+    status = (
+      <div className={[styles.statusWrapper, styles.requestPending].join(" ")}>
+        <p>Sending</p>
+        <Spinner/>
+      </div>
+    );
+  }
+  if (error?.message) {
+    status = (
+      <div className={[styles.statusWrapper, styles.requestError].join(" ")}>
+        <p>Something went wrong!</p>
+        <span>An error occurred while trying to send the message.</span>
+        <Button>Retry</Button>
+      </div>
+    );
+  }
+  if (fetchedData.length !== 0) {
+    status = (
+      <div>
+        <p className={styles.statusMessage}>Your message was successfully sent!</p>
+      </div>
+    )
+  }
 
   return (
     <Formik
@@ -81,21 +83,19 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
       }}
     >
       <Form className={[styles.wrapper, className].join(" ")}>
-        <div className={styles.fieldsWrapper}>
-          <FormField label={"Name"} name={"name"} placeholder={"John Doe"} disabled={formInactive}/>
-          <FormField label={"Email"} name={"email"} type={"email"} placeholder={"doe@example.com"} disabled={formInactive}/>
-          <FormField label={"Company"} name={"company"} placeholder={"MegaCorp Inc."} disabled={formInactive}/>
-          <FormField label={"Message"} name={"message"} component={"textarea"} placeholder={"Your message..."} disabled={formInactive}/>
-        </div>
-        <div className={"center"}>
-          <Button type={"submit"} className={styles.submitBtn} disabled={formInactive}>Submit</Button>
-        </div>
+        <fieldset disabled={formInactive}>
+          <div className={styles.fieldsWrapper}>
+            <FormField label={"Name"} name={"name"} placeholder={"John Doe"}/>
+            <FormField label={"Email"} name={"email"} type={"email"} placeholder={"doe@example.com"}/>
+            <FormField label={"Company"} name={"company"} placeholder={"MegaCorp Inc."}/>
+            <FormField label={"Message"} name={"message"} component={"textarea"} placeholder={"Your message..."}/>
+          </div>
+          <div className={"center"}>
+            <Button type={"submit"} className={styles.submitBtn} disabled={formInactive}>Submit</Button>
+          </div>
+        </fieldset>
         {
-          formInactive && (
-            <div className={styles.statusWrapper}>
-
-            </div>
-          )
+          formInactive && status
         }
       </Form>
     </Formik>

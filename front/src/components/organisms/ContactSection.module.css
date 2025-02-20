@@ -19,7 +19,7 @@
   content: "";
   position: absolute;
   inset: -0.25em;
-  background: conic-gradient(var(--fxRed), var(--fxGreen), var(--fxBlue), var(--fxRed));
+  background: conic-gradient(var(--fxRed--05), var(--fxGreen--05), var(--fxBlue--05), var(--fxRed--05));
   border-radius: inherit;
   z-index: -1;
   transition: filter 2s;

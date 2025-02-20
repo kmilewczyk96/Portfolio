@@ -1,13 +1,11 @@
-.message {
-  font-size: 3rem;
-}
-
 .loading {
-  margin-bottom: 2.4rem;
+  margin-bottom: 1em;
 }
 
 .error {
-  color: hsl(from var(--fxRed) h s l / 1);
+  font-weight: 700;
+  font-size: 1.25em;
+  color: var(--fxRed--10);
 }
 
 .projectsShowcase {

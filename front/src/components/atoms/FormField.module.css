@@ -7,7 +7,7 @@
 }
 
 .wrapper.error {
-  color: hsl(from var(--fxRed) h s l / 1)!important;
+  color: var(--fxRed--10);
 }
 
 .wrapper:focus-within > label,
@@ -25,20 +25,20 @@
   padding: 0.4em 0.8em;
 
   &:focus {
-    background-color: hsl(from var(--fxBlue) h s l / 0.1)!important;
-    border-color: hsl(from var(--fxBlue) h s l / 1)!important;
-    box-shadow: 0 0 0 3px hsl(from var(--fxBlue) h s l / 0.8)!important;
+    background-color: var(--fxBlue--01);
+    border-color: var(--fxBlue--10);
+    box-shadow: 0 0 0 3px var(--fxBlue--08);
   }
 }
 
 .wrapper.error > input,
 .wrapper.error > textarea {
-  background-color: hsl(from var(--fxRed) h s l / 0.1)!important;
-  border-color: hsl(from var(--fxRed) h s l / 1)!important;
+  background-color: var(--fxRed--01);
+  border-color: var(--fxRed--10);
 
   &:focus {
-    border-color: hsl(from var(--fxRed) h s l / 1)!important;
-    box-shadow: 0 0 0 3px hsl(from var(--fxRed) h s l / 0.8)!important;
+    border-color: var(--fxRed--10);
+    box-shadow: 0 0 0 3px var(--fxRed--08);
   }
 }
 
