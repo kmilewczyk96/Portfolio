@@ -33,17 +33,17 @@ const ProjectsDemoSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
         </div>
       );
     } else {
-      if (error?.message) {
+      if (error) {
         content = (
           <div className={"center"}>
-            <p className={[styles.message, styles.error].join(" ")}>Something went wrong while fetching projects!</p>
+            <p className={[styles.message, styles.error].join(" ")}>{error}</p>
           </div>
         );
       } else {
         content = <>
           {fetchedData.length <= 2 ? (
             <ul className={styles.projectsShowcase}>
-              {fetchedData.map((project: IProject): ReactElement => (
+              {fetchedData!.map((project: IProject): ReactElement => (
                 <ProjectCard key={project.id} isActive={true} project={project}/>
               ))}
             </ul>

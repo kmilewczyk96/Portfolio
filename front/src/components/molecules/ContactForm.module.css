@@ -44,9 +44,11 @@
 }
 
 .requestPending {
-  background-color: rgba(26, 26, 26, 0.8);
-  font-size: 1.25em;
   gap: 0.75em;
+}
+
+.requestPending > p {
+  font-size: 1.25em;
 }
 
 .requestError {
@@ -63,10 +65,36 @@
   margin-bottom: 0.75em;
 }
 
+.requestSuccessful {
+  gap: 1em;
+}
+
+.requestSuccessful > p {
+  font-weight: 600;
+  font-size: 1.25em;
+  color: var(--fxGreen--10);
+}
+
+.requestSuccessful > span {
+  margin-bottom: 0.75em;
+}
+
 @media screen and (max-width: 120rem) {
   .wrapper {
     width: 56rem;
     padding: 8rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .requestError {
+    background-color: var(--fxRed--01);
+    border: 3px solid var(--fxRed--05);
+  }
+
+  .requestSuccessful {
+    background-color: var(--fxGreen--01);
+    border: 3px solid var(--fxGreen--08);
   }
 }
 

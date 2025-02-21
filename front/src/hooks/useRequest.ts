@@ -15,10 +15,10 @@ const defaultConfig = {
 }
 export function useRequest(
   {url, method, config=defaultConfig}: IURL)
-  : [boolean, null | {message: string}, any[], (formData: string) => {}] {
+  : [boolean, string | null, any[], (formData: string) => {}] {
   const [isFetching, setIsFetching] = useState<boolean>(false);
-  const [error, setError] = useState<null | {message: string}>(null);
-  const [fetchedData, setFetchedData] = useState<any>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [fetchedData, setFetchedData] = useState<any[]>([]);
 
 
   const sendRequest = useCallback(async function sendRequest(data?: BodyInit) {
@@ -36,9 +36,7 @@ export function useRequest(
         const responseData = await response.json();
         setFetchedData(responseData);
       } catch (e: any) {
-        setError(
-          {message: e.message || "An error occurred while trying to fetch data!"}
-        );
+        setError("An error occurred while trying to fetch data!");
       }
       setIsFetching(false);
     }
