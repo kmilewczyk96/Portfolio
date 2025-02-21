@@ -39,10 +39,9 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
     method: httpRequestMethods.post,
     config: config,
   });
-  // @ts-ignore
-  const formInactive: boolean = false;
+  const formInactive: boolean = isFetching || Boolean(error) || (fetchedData!.length !== 0);
 
-  let status: ReactElement | null = null;
+  let status: ReactElement = <></>;
   if (isFetching) {
     status = (
       <div className={[styles.statusWrapper, styles.requestPending].join(" ")}>
@@ -51,7 +50,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
       </div>
     );
   }
-  if (error?.message) {
+  if (error) {
     status = (
       <div className={[styles.statusWrapper, styles.requestError].join(" ")}>
         <p>Something went wrong!</p>
@@ -62,8 +61,10 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
   }
   if (fetchedData.length !== 0) {
     status = (
-      <div>
-        <p className={styles.statusMessage}>Your message was successfully sent!</p>
+      <div className={[styles.statusWrapper, styles.requestSuccessful].join(" ")}>
+        <p>SUCCESS</p>
+        <span>Your message was successfully sent!</span>
+        <Button>Confirm</Button>
       </div>
     )
   }
@@ -91,7 +92,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
             <FormField label={"Message"} name={"message"} component={"textarea"} placeholder={"Your message..."}/>
           </div>
           <div className={"center"}>
-            <Button type={"submit"} className={styles.submitBtn} disabled={formInactive}>Submit</Button>
+            <Button type={"submit"} className={styles.submitBtn}>Submit</Button>
           </div>
         </fieldset>
         {
