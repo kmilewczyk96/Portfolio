@@ -15,11 +15,15 @@ const defaultConfig = {
 }
 export function useRequest(
   {url, method, config=defaultConfig}: IURL)
-  : [boolean, string | null, any[], (formData: string) => {}] {
+  : [boolean, string | null, any[], (formData: string) => {}, () => void] {
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [fetchedData, setFetchedData] = useState<any[]>([]);
 
+  function resetRequest(): void {
+    setError(null);
+    setFetchedData([]);
+  }
 
   const sendRequest = useCallback(async function sendRequest(data?: BodyInit) {
     // This function will be returned and should only be called from outside unless http method is "GET".
@@ -51,5 +55,5 @@ export function useRequest(
   }, [sendRequest]);
 
 
-  return [isFetching, error, fetchedData, sendRequest];
+  return [isFetching, error, fetchedData, sendRequest, resetRequest];
 }

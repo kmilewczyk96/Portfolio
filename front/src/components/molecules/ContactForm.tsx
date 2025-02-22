@@ -34,7 +34,7 @@ const config = {
   }
 };
 export default function ContactForm({className = undefined}: IProps): ReactElement {
-  const [isFetching, error, fetchedData, sendRequest] = useRequest({
+  const [isFetching, error, fetchedData, sendRequest, resetRequest] = useRequest({
     url: (import.meta.env.VITE_API_URL || "/api") + "/messages",
     method: httpRequestMethods.post,
     config: config,
@@ -55,7 +55,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
       <div className={[styles.statusWrapper, styles.requestError].join(" ")}>
         <p>Something went wrong!</p>
         <span>An error occurred while trying to send the message.</span>
-        <Button>Retry</Button>
+        <Button onClick={resetRequest}>Retry</Button>
       </div>
     );
   }
@@ -64,7 +64,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
       <div className={[styles.statusWrapper, styles.requestSuccessful].join(" ")}>
         <p>SUCCESS</p>
         <span>Your message was successfully sent!</span>
-        <Button>Confirm</Button>
+        <Button onClick={resetRequest}>Confirm</Button>
       </div>
     )
   }
