@@ -13,8 +13,8 @@ export default function ContactCard({className}: IProps): ReactElement {
   return (
     <div className={[styles.wrapper, className].join(" ")}>
       <div className={styles.socials}>
-        <SvgLink goTo={"https://linkedin.com/"} icon={socialIcons.linkedin}/>
-        <SvgLink goTo={"https://github.com/"} icon={socialIcons.github}/>
+        <SvgLink goTo={"https://www.linkedin.com/in/karol-milewczyk/"} icon={socialIcons.linkedin}/>
+        <SvgLink goTo={"https://github.com/kmilewczyk96/"} icon={socialIcons.github}/>
       </div>
       <div className={styles.content}>
         <p>
