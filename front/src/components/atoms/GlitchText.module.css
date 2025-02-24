@@ -46,7 +46,7 @@
   }
   5.1% {
     text-shadow: 0.05em 0 var(--fxRed--05),
-    -0.025em -0.025em 0 var(--fxGree--05n),
+    -0.025em -0.025em 0 var(--fxGreen--05),
     -0.025em -0.025em 0 var(--fxBlue--05);
   }
   20% {
