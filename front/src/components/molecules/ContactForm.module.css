@@ -57,12 +57,17 @@
 
 .requestError > p {
   font-weight: 600;
-  font-size: 1.25em;
+  font-size: 1.5em;
   color: var(--fxRed--10);
 }
 
 .requestError > span {
   margin-bottom: 0.75em;
+}
+
+.errorBtn {
+  background-color: var(--fxRed--01);
+  color: var(--fxRed--10);
 }
 
 .requestSuccessful {
@@ -71,12 +76,17 @@
 
 .requestSuccessful > p {
   font-weight: 600;
-  font-size: 1.25em;
+  font-size: 1.5em;
   color: var(--fxGreen--10);
 }
 
 .requestSuccessful > span {
   margin-bottom: 0.75em;
+}
+
+.successBtn {
+  background-color: var(--fxGreen--01);
+  color: var(--fxGreen--10);
 }
 
 @media screen and (max-width: 120rem) {

@@ -55,7 +55,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
       <div className={[styles.statusWrapper, styles.requestError].join(" ")}>
         <p>Something went wrong!</p>
         <span>An error occurred while trying to send the message.</span>
-        <Button onClick={resetRequest}>Retry</Button>
+        <Button type_={"secondary"} onClick={resetRequest} className={styles.errorBtn}>Close</Button>
       </div>
     );
   }
@@ -64,7 +64,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
       <div className={[styles.statusWrapper, styles.requestSuccessful].join(" ")}>
         <p>SUCCESS</p>
         <span>Your message was successfully sent!</span>
-        <Button onClick={resetRequest}>Confirm</Button>
+        <Button type_={"secondary"} onClick={resetRequest} className={styles.successBtn}>Confirm</Button>
       </div>
     )
   }
@@ -92,7 +92,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
             <FormField label={"Message"} name={"message"} component={"textarea"} placeholder={"Your message..."}/>
           </div>
           <div className={"center"}>
-            <Button type={"submit"} className={styles.submitBtn}>Submit</Button>
+            <Button type_={"cta"} type={"submit"} className={styles.submitBtn}>Submit</Button>
           </div>
         </fieldset>
         {

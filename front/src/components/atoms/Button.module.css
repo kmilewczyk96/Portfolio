@@ -1,4 +1,4 @@
-.buttonDefault {
+.cta {
   position: relative;
   font-size: 0.8em;
   font-weight: 500;
@@ -8,14 +8,23 @@
   padding: 0.6em 1.2em;
 }
 
-.buttonDefault,
-.buttonDefault::before,
-.buttonDefault::after {
+.secondary {
+  font-size: 0.8em;
+  font-weight: 500;
+  border: max(1px, 0.125em) solid currentColor;
+  border-radius: 5px;
+  transition: box-shadow 0.3s, text-shadow 0.3s;
+  padding: 0.6em 1.2em;
+}
+
+.cta,
+.cta::before,
+.cta::after {
   transition: background-color 0.3s, opacity 0.3s, filter 0.3s, color 0.3s;
 }
 
-.buttonDefault::before,
-.buttonDefault::after {
+.cta::before,
+.cta::after {
   content: "";
   position: absolute;
   inset: -0.25em;
@@ -25,8 +34,8 @@
 }
 
 @media (hover: hover) {
-  .buttonDefault:not(:disabled) {
-    &.buttonDefault:hover {
+  .cta:not(:disabled) {
+    &:hover {
       color: var(--fxGreen--10);
       &::before,
       &::after {
@@ -37,10 +46,17 @@
         background-color: var(--fxGreen--10);
       }
     }
-    &.buttonDefault:active {
+    &:active {
       &::after {
         filter: blur(3px);
       }
+    }
+  }
+
+  .secondary:not(:disabled) {
+    &:hover:not(:active) {
+      box-shadow: 0 0 10px currentColor;
+      text-shadow: 0 0 2px currentColor;
     }
   }
 }

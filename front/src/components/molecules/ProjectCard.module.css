@@ -44,5 +44,6 @@
 }
 
 .linkButton {
-  font-size: 0.75em;
+  background-color: #1a1a1a;
+  color: #c3bcc2;
 }

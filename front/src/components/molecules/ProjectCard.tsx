@@ -44,6 +44,7 @@ export default function ProjectCard({project, isActive=false, className=undefine
         <p className={styles.projectDescription}>{project.description}</p>
         <div className={styles.actions}>
           <Button
+            type_={"secondary"}
             goTo={project.source_code}
             className={styles.linkButton}
             disabled={!isActive}
