@@ -1,46 +1,44 @@
-.buttonDefault {
-  position: relative;
+.default {
   font-size: 0.8em;
   font-weight: 500;
-  background-color: #1a1a1a;
-  color: #c3bcc2;
-  border-radius: 5px;
+  border: max(1px, 0.125em) solid currentColor;
+  border-radius: 3px;
+  transition: box-shadow 0.3s, text-shadow 0.3s;
   padding: 0.6em 1.2em;
 }
 
-.buttonDefault,
-.buttonDefault::before,
-.buttonDefault::after {
+.cta,
+.cta::before,
+.cta::after {
   transition: background-color 0.3s, opacity 0.3s, filter 0.3s, color 0.3s;
 }
 
-.buttonDefault::before,
-.buttonDefault::after {
+.cta::before,
+.cta::after {
   content: "";
   position: absolute;
-  inset: -0.25em;
-  background-color: #c3bcc2;
+  width: 100%;
+  height: 100%;
+  inset: 0;
   border-radius: inherit;
   z-index: -1;
 }
 
+
 @media (hover: hover) {
-  .buttonDefault:not(:disabled) {
-    &.buttonDefault:hover {
-      color: var(--fxGreen--10);
-      &::before,
-      &::after {
-        opacity: 1;
-      }
-      &::after {
-        filter: blur(9px);
-        background-color: var(--fxGreen--10);
-      }
+  .default:not(:disabled) {
+    &:hover:not(:active) {
+      box-shadow: 0 0 10px currentColor;
+      text-shadow: 0 0 2px currentColor;
     }
-    &.buttonDefault:active {
-      &::after {
-        filter: blur(3px);
-      }
-    }
+  }
+}
+
+@keyframes glitch {
+  0% {
+    left: 50px;
+  }
+  100% {
+    left: 0;
   }
 }

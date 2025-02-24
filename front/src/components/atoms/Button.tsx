@@ -15,7 +15,7 @@ interface IProps extends ComponentPropsWithoutRef<"button"> {
 export default function Button({goTo, className, children, ...props}: IProps): ReactElement {
   const button: ReactElement = (
     <button
-      className={[styles.buttonDefault, className].join(" ")}
+      className={[styles.default, className].join(" ")}
       {...props}
     >
       {children}

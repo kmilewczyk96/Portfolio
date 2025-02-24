@@ -8,7 +8,7 @@ import {
   forwardRef,
 } from "react";
 
-import Button from "../atoms/Button.tsx";
+import GlitchButton from "../atoms/GlitchButton.tsx";
 import GlitchImage from "../atoms/GlitchImage.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import Section from "../molecules/Section.tsx";
@@ -41,7 +41,7 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
               I hope you enjoy browsing my website and consider filling contact form attached at the very end of the
               page.
             </p>
-            <Button className={styles.cta} onClick={handleClick}>Learn More</Button>
+            <GlitchButton text={"Learn More"} className={styles.cta} onClick={handleClick}/>
           </div>
           <div className={styles.photoWrapper}>
             <GlitchImage

@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 
 import Button from "../atoms/Button.tsx";
 import FormField from "../atoms/FormField.tsx";
+import GlitchButton from "../atoms/GlitchButton.tsx";
 import Spinner from "../atoms/Spinner.tsx";
 import {useRequest} from "../../hooks/useRequest.ts";
 import {httpRequestMethods} from "../../utils/enums.ts";
@@ -55,7 +56,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
       <div className={[styles.statusWrapper, styles.requestError].join(" ")}>
         <p>Something went wrong!</p>
         <span>An error occurred while trying to send the message.</span>
-        <Button onClick={resetRequest}>Retry</Button>
+        <Button onClick={resetRequest} className={styles.errorBtn}>Close</Button>
       </div>
     );
   }
@@ -64,7 +65,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
       <div className={[styles.statusWrapper, styles.requestSuccessful].join(" ")}>
         <p>SUCCESS</p>
         <span>Your message was successfully sent!</span>
-        <Button onClick={resetRequest}>Confirm</Button>
+        <Button onClick={resetRequest} className={styles.successBtn}>Confirm</Button>
       </div>
     )
   }
@@ -92,7 +93,7 @@ export default function ContactForm({className = undefined}: IProps): ReactEleme
             <FormField label={"Message"} name={"message"} component={"textarea"} placeholder={"Your message..."}/>
           </div>
           <div className={"center"}>
-            <Button type={"submit"} className={styles.submitBtn}>Submit</Button>
+            <GlitchButton text={"Submit"} type={"submit"} className={styles.submitBtn}/>
           </div>
         </fieldset>
         {
