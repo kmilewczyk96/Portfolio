@@ -11,7 +11,7 @@ type IProps = {
   animationDelaySeconds?: number
 };
 
-export default function GlitchText({text, className, htmlTextTag, animationDelaySeconds=0}: IProps) {
+export default function GlitchText({text, className, htmlTextTag, animationDelaySeconds=0}: IProps): ReactElement {
   let content: ReactElement;
   switch (htmlTextTag) {
     case htmlTextTags.h1:
