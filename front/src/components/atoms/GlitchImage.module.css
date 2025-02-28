@@ -16,7 +16,7 @@
 
 .wrapper > img:first-child {
   z-index: 0;
-  animation: glitch 5s infinite;
+  /*animation: glitch 5s infinite;*/
   animation-delay: inherit;
 }
 
@@ -24,7 +24,7 @@
   left: -1.5em;
   opacity: 0;
   filter: drop-shadow(-0.5em 0 0 var(--fxRed--05));
-  animation: glitch2 5s infinite;
+  /*animation: glitch2 5s infinite;*/
   animation-delay: inherit;
 }
 
@@ -32,7 +32,7 @@
   left: 1.5em;
   opacity: 0;
   filter: drop-shadow(0.5em 0 0 var(--fxGreen--05));
-  animation: glitch3 5s infinite;
+  /*animation: glitch3 5s infinite;*/
   animation-delay: inherit;
 }
 
