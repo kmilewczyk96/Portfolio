@@ -2,7 +2,6 @@
   position: sticky;
   top: 0;
   z-index: 99;
-  background-color: rgba(26, 26, 26, 0.1);
   backdrop-filter: blur(3px);
   transition: opacity 0.5s;
   padding-top: 0.25em;

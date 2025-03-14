@@ -1,6 +1,5 @@
 .wrapper {
   position: relative;
-  overflow: hidden;
   display: grid;
   grid-template-areas:
       "topLeft carousel topRight"
@@ -40,6 +39,7 @@
   z-index: 5;
   opacity: 1;
   filter: none;
+  transform: rotateY(0) translateX(0%);
 }
 
 .right {

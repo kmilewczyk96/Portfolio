@@ -9,10 +9,8 @@ import {
 } from "react";
 
 import GlitchButton from "../atoms/GlitchButton.tsx";
-import GlitchImage from "../atoms/GlitchImage.tsx";
 import GlitchText from "../atoms/GlitchText.tsx";
 import Section from "../molecules/Section.tsx";
-import myPhoto from "../../assets/myPhoto.webp";
 import {htmlTextTags} from "../../utils/enums.ts";
 
 
@@ -42,14 +40,6 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
               page.
             </p>
             <GlitchButton text={"Learn More"} className={styles.cta} onClick={handleClick}/>
-          </div>
-          <div className={styles.photoWrapper}>
-            <GlitchImage
-              imageSource={myPhoto}
-              imageAltText={"My photo."}
-              className={styles.photo}
-              animationDelaySeconds={3}
-            />
           </div>
         </div>
       </Section>
