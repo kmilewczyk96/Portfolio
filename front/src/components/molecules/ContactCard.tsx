@@ -18,15 +18,16 @@ export default function ContactCard({className}: IProps): ReactElement {
       </div>
       <div className={styles.content}>
         <p>
-          Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
-          Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
-          Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
-          Something about myself I should write in here. This is just boilerplate for now. Choosing font etc.
+          Currently I am searching for position as Backend/Full-stack developer, I can also help you create website
+          like this one as a freelancer.<br/>
+          If you have any questions, please fill out attached form, and I will get back to you within 48 hours.
+          Feel free to add me to your LinkedIn network or explore my GitHub repositories using the links above.
         </p>
       </div>
       <div className={styles.statusWrapper}>
         <p>Location: Warsaw, PL</p>
         <p>Status: Available instantly.</p>
+        <p>Relocation: Ready to relocate within EU + UK.</p>
       </div>
     </div>
   );
