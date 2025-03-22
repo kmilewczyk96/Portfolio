@@ -1,13 +1,30 @@
 .wrapper {
-  margin-block: auto;
+  padding-top: 2em;
   font-size: 1em;
   margin-inline: auto;
 }
 
+.contactHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 2em;
+}
+
+.headerPhotoWrapper {
+  border-right: 1px solid currentColor;
+  padding-right: 2em;
+}
+
+.headerPhoto {
+  width: 10em;
+  border-radius: 9px;
+}
+
 .socials {
   display: flex;
-  gap: 1.2rem;
-  margin-bottom: 2em;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
 .content {

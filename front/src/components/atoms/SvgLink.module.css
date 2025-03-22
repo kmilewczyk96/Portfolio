@@ -1,16 +1,28 @@
+.link {
+  transition: filter 0.5s;
+}
+
 .base {
   width: 3.6rem;
   aspect-ratio: 1;
   fill: #c3bcc2;
-  transition: filter 0.5s;
+  vertical-align: middle;
+  margin-right: 0.25em;
+}
+
+.label {
+  vertical-align: middle;
+  border: 1px solid transparent;
 }
 
 @media (hover: hover) {
-  /*.link:focus > .base,*/
-  .base:hover {
+  .link:hover {
     filter: drop-shadow(0 0 10px #c3bcc2);
+    .label {
+      border-bottom-color: currentColor;
+    }
   }
-  .base:active {
+  .link:active {
     filter: none;
   }
 }
