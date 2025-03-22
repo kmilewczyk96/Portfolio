@@ -9,6 +9,7 @@ import {
   IProject,
   ITags
 } from "../../utils/interfaces";
+import fallback from "../../assets/fallback.jpg";
 
 
 interface IProps {
@@ -18,10 +19,8 @@ interface IProps {
 }
 
 export default function ProjectCard({project, isActive=false, className=undefined}: IProps): ReactElement {
-  const fallbackImg: string = "./src/assets/fallback.jpg";
-
   function handleImgError(e: SyntheticEvent<HTMLImageElement, Event>): void {
-    e.currentTarget.src = fallbackImg;
+    e.currentTarget.src = fallback;
   }
 
   return (

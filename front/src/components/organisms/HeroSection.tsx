@@ -32,12 +32,9 @@ const HeroSection: ForwardRefExoticComponent<RefAttributes<HTMLElement>> = forwa
               animationDelaySeconds={3}
             />
             <p className={styles.description}>
-              Hi! I am a Software Developer proficient with Python and TypeScript.
-              I have experience with libraries such as Django, DRF, FastAPI, PyQt and React.
+              Hi! I am a Full-Stack Developer proficient with Python and TypeScript.
               I'm strongly focused on applying best practices, writing clean and maintainable code.
               I'm always eager to broaden my skills (both technical and soft).
-              I hope you enjoy browsing my website and consider filling contact form attached at the very end of the
-              page.
             </p>
             <GlitchButton text={"Learn More"} className={styles.cta} onClick={handleClick}/>
           </div>
