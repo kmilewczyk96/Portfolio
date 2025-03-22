@@ -3,6 +3,7 @@ import styles from "./ContactCard.module.css";
 import {ReactElement} from "react";
 
 import SvgLink, {socialIcons} from "../atoms/SvgLink.tsx";
+import headerPhoto from "../../assets/headerPhoto.webp";
 
 
 interface IProps {
@@ -14,7 +15,7 @@ export default function ContactCard({className}: IProps): ReactElement {
     <div className={[styles.wrapper, className].join(" ")}>
       <div className={styles.contactHeader}>
         <div className={styles.headerPhotoWrapper}>
-          <img className={styles.headerPhoto} src={"/src/assets/headerPhoto.webp"} alt={"Header photo of myself."}/>
+          <img className={styles.headerPhoto} src={headerPhoto} alt={"Header photo of myself."}/>
         </div>
         <line/>
         <div className={styles.socials}>
